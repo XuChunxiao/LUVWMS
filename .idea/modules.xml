@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/WMS.iml" filepath="$PROJECT_DIR$/.idea/WMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-comm/luv-comm.iml" filepath="$PROJECT_DIR$/luv-comm/luv-comm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-server/luv-server.iml" filepath="$PROJECT_DIR$/luv-server/luv-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-wms-parent/luv-wms-parent.iml" filepath="$PROJECT_DIR$/luv-wms-parent/luv-wms-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-wms-parent/wms-api/wms-api.iml" filepath="$PROJECT_DIR$/luv-wms-parent/wms-api/wms-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-wms-parent/wms-common/wms-common.iml" filepath="$PROJECT_DIR$/luv-wms-parent/wms-common/wms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-wms-parent/wms-service/wms-service.iml" filepath="$PROJECT_DIR$/luv-wms-parent/wms-service/wms-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/luv-wms-parent/wms-web/wms-web.iml" filepath="$PROJECT_DIR$/luv-wms-parent/wms-web/wms-web.iml" />
+    </modules>
+  </component>
+</project>

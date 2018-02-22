@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.luvletter</groupId>
+        <artifactId>luv-wms-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../luv-wms-parent/pom.xml</relativePath>
+    </parent>
+    <groupId>cn.luvletter</groupId>
+    <artifactId>luv-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>cn.luvletter</groupId>
+            <artifactId>luv-comm</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.luvletter</groupId>
+            <artifactId>wms-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.luvletter</groupId>
+            <artifactId>wms-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.luvletter</groupId>
+            <artifactId>wms-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>wms-server</finalName>
+    </build>
+</project>

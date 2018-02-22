@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="luv-server" />
+        <module name="wms-api" />
+        <module name="wms-common" />
+        <module name="wms-service" />
+        <module name="wms-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="luv-comm" target="1.8" />
+      <module name="luv-server" target="1.8" />
+      <module name="luv-wms-parent" target="1.8" />
+      <module name="wms-api" target="1.8" />
+      <module name="wms-common" target="1.8" />
+      <module name="wms-service" target="1.8" />
+      <module name="wms-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

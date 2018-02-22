@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.luvletter.sys.dao.PermissionMapper" >
+    <resultMap id="BaseResultMap" type="cn.luvletter.sys.model.Permission" >
+        <id column="ID" property="id" jdbcType="INTEGER" />
+        <result column="permission_no" property="permissionNo" jdbcType="VARCHAR" />
+        <result column="permission_name" property="permissioName" jdbcType="VARCHAR" />
+        <result column="permission_desc" property="permissionDesc" jdbcType="VARCHAR" />
+        <result column="permission_url" property="permissionUrl" jdbcType="VARCHAR" />
+        <result column="permission_pid" property="permissionPid" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT * FROM sys_permission
+    </select>
+    <select id="findByOperatorNo" resultMap="BaseResultMap" parameterType="string">
+       select sp.*
+        from sys_operator u
+        LEFT JOIN sys_oprt_role sor on u.no= sor.oprt_no
+        LEFT JOIN sys_role sr on sor.role_no=sr.role_no
+        LEFT JOIN sys_role_permission srp on srp.role_no=sr.role_no
+        LEFT JOIN sys_permission sp on sp.permission_no =srp.permission_no
+        where u.no=#{no}
+    </select>
+</mapper>

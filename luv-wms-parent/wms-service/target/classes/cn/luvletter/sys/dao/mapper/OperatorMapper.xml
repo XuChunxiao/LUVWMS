@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.luvletter.sys.dao.OperatorMapper" >
+  <resultMap id="BaseResultMap" type="cn.luvletter.sys.model.Operator" >
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="NO" property="no" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="DECIMAL" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="DECIMAL" />
+    <result column="OPRT_NO" property="oprtNo" jdbcType="DECIMAL" />
+    <result column="OPRT_NAME" property="oprtName" jdbcType="VARCHAR" />
+    <result column="OPRT_TIME" property="oprtTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, NO, PASSWORD, NAME, ADDRESS, PHONE, SEX, FLAG, OPRT_NO, OPRT_NAME, OPRT_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.luvletter.sys.model.OperatorExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_operator
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_operator
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_operator
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.luvletter.sys.model.OperatorExample" >
+    delete from sys_operator
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.luvletter.sys.model.Operator" >
+    insert into sys_operator (ID, NO, PASSWORD, 
+      NAME, ADDRESS, PHONE, 
+      SEX, FLAG, OPRT_NO, 
+      OPRT_NAME, OPRT_TIME)
+    values (#{id,jdbcType=DECIMAL}, #{no,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{phone,jdbcType=DECIMAL}, 
+      #{sex,jdbcType=VARCHAR}, #{flag,jdbcType=DECIMAL}, #{oprtNo,jdbcType=DECIMAL}, 
+      #{oprtName,jdbcType=VARCHAR}, #{oprtTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.luvletter.sys.model.Operator" >
+    insert into sys_operator
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="no != null" >
+        NO,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="flag != null" >
+        FLAG,
+      </if>
+      <if test="oprtNo != null" >
+        OPRT_NO,
+      </if>
+      <if test="oprtName != null" >
+        OPRT_NAME,
+      </if>
+      <if test="oprtTime != null" >
+        OPRT_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="no != null" >
+        #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=DECIMAL},
+      </if>
+      <if test="oprtNo != null" >
+        #{oprtNo,jdbcType=DECIMAL},
+      </if>
+      <if test="oprtName != null" >
+        #{oprtName,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtTime != null" >
+        #{oprtTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.luvletter.sys.model.OperatorExample" resultType="java.lang.Integer" >
+    select count(*) from sys_operator
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_operator
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.no != null" >
+        NO = #{record.no,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null" >
+        PHONE = #{record.phone,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sex != null" >
+        SEX = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.flag != null" >
+        FLAG = #{record.flag,jdbcType=DECIMAL},
+      </if>
+      <if test="record.oprtNo != null" >
+        OPRT_NO = #{record.oprtNo,jdbcType=DECIMAL},
+      </if>
+      <if test="record.oprtName != null" >
+        OPRT_NAME = #{record.oprtName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oprtTime != null" >
+        OPRT_TIME = #{record.oprtTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_operator
+    set ID = #{record.id,jdbcType=DECIMAL},
+      NO = #{record.no,jdbcType=VARCHAR},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=DECIMAL},
+      SEX = #{record.sex,jdbcType=VARCHAR},
+      FLAG = #{record.flag,jdbcType=DECIMAL},
+      OPRT_NO = #{record.oprtNo,jdbcType=DECIMAL},
+      OPRT_NAME = #{record.oprtName,jdbcType=VARCHAR},
+      OPRT_TIME = #{record.oprtTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.luvletter.sys.model.Operator" >
+    update sys_operator
+    <set >
+      <if test="no != null" >
+        NO = #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=DECIMAL},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null" >
+        FLAG = #{flag,jdbcType=DECIMAL},
+      </if>
+      <if test="oprtNo != null" >
+        OPRT_NO = #{oprtNo,jdbcType=DECIMAL},
+      </if>
+      <if test="oprtName != null" >
+        OPRT_NAME = #{oprtName,jdbcType=VARCHAR},
+      </if>
+      <if test="oprtTime != null" >
+        OPRT_TIME = #{oprtTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.luvletter.sys.model.Operator" >
+    update sys_operator
+    set NO = #{no,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=DECIMAL},
+      SEX = #{sex,jdbcType=VARCHAR},
+      FLAG = #{flag,jdbcType=DECIMAL},
+      OPRT_NO = #{oprtNo,jdbcType=DECIMAL},
+      OPRT_NAME = #{oprtName,jdbcType=VARCHAR},
+      OPRT_TIME = #{oprtTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
