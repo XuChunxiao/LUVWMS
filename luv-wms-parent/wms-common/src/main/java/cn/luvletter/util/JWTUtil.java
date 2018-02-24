@@ -1,19 +1,20 @@
 package cn.luvletter.util;
 
 import cn.luvletter.bean.AuthenticationBean;
+import cn.luvletter.exception.ApplicationException;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.time.DateUtils;
+import org.springframework.security.core.GrantedAuthority;
 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Zephyr Ji
@@ -33,7 +34,7 @@ public class JWTUtil {
        Date iatDate = new Date();
        //过期时间 1分钟过期
        Calendar nowTime = Calendar.getInstance();
-       nowTime.add(Calendar.MINUTE,1);
+       nowTime.add(Calendar.MINUTE,10);
        Date expiresDate = nowTime.getTime();
 
        Map<String,Object> map = new HashMap<>();
@@ -50,26 +51,59 @@ public class JWTUtil {
         return token;
    }
 
-   public static String getAuthentication(HttpServletRequest request) {
-       return request.getHeader(HEADER_STRING).replaceAll(TOKEN_PREFIX,"").trim();
+   /**
+    * @Description: 从request拿到token
+    * @Date: 22:26 2018/2/24
+    */
+   public static String getToken(HttpServletRequest request) {
+       String header = request.getHeader(HEADER_STRING);
+       if(StringUtils.isEmpty(header)){
+           return null;
+       }
+       return header.replaceAll(TOKEN_PREFIX,"").trim();
    }
 
+   /**
+    * @Description: 检验token是否有效
+    * @Date: 22:27 2018/2/24
+    */
    public static boolean validateToken(String token,String secret) throws UnsupportedEncodingException {
        if(token != null){
+           Date expiresAt = JWT.decode(token).getExpiresAt();
+           if(expiresAt.compareTo(DateUtil.now())<0) {
+                throw new ApplicationException("token expire!");
+           }
            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(secret)).build();
            DecodedJWT jwt = null;
            try{
-
                jwt = jwtVerifier.verify(token);
            }catch (Exception e){
-               System.out.println("凭证已过期");
+              e.printStackTrace();
            }
            return true;
        }
        return false;
    }
 
+    /**
+     * @Description: 从token获取账号
+     * @Date: 22:27 2018/2/24
+     */
     public static String getUsernameFromToken(String authHead) {
             return JWT.decode(authHead).getClaim("account").asString();
+    }
+
+
+    public static String authenticationToString(Collection<? extends GrantedAuthority> authentications){
+        StringBuilder res = new StringBuilder();
+        int v = 1;
+        for(GrantedAuthority grantedAuthority : authentications){
+            res.append(grantedAuthority.getAuthority());
+            v++;
+            if(v<authentications.size()){
+                res.append(",");
+            }
+        }
+        return res.toString();
     }
 }

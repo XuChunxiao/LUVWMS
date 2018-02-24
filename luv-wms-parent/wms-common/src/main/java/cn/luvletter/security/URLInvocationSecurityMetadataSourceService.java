@@ -26,36 +26,22 @@ public class URLInvocationSecurityMetadataSourceService implements FilterInvocat
     private static JdbcUtil jdbcUtil;
 
     private Map<String, Collection<ConfigAttribute>> urlMap =null;
-    static {
-        jdbcUtil = new JdbcUtil(PropertyUtil.getProperty("driver"),
-                PropertyUtil.getProperty("url"),
-                PropertyUtil.getProperty("username"),
-                PropertyUtil.getProperty("password"));
 
-    }
 
     private void loadResourceDefine() throws SQLException {
-        /*List<Map> list = jdbcUtil.selectByParams("select permission_name name,permission_url url from sys_permission", null);
+        List<Map<String,Object>> list = JdbcUtil.newInstance().selectByParams("select sr.role_name name,sp.permission_url url from sys_permission sp LEFT JOIN sys_role_permission srp on sp.permission_no=srp.permission_no\n" +
+                "LEFT JOIN sys_role sr on srp.role_no=sr.role_no", null);
         urlMap = new HashMap<>();
         Collection<ConfigAttribute> array;
         ConfigAttribute cfg;
-        for(Map<String,String> var : list) {
+        for(Map<String,Object> var : list) {
             array = new ArrayList<>();
-            cfg = new SecurityConfig(var.get("name"));
+            cfg = new SecurityConfig((String)var.get("name"));
             //此处只添加了用户的名字，其实还可以添加更多权限的信息，例如请求方法到ConfigAttribute的集合中去。此处添加的信息将会作为MyAccessDecisionManager类的decide的第三个参数。
             array.add(cfg);
             //用权限的getUrl() 作为map的key，用ConfigAttribute的集合作为 value，
-            urlMap.put(var.get("url"), array);
-        }*/
-        urlMap = new HashMap<>();
-        ConfigAttribute cfg1 = new SecurityConfig("role_home");
-        List<ConfigAttribute> arr = new ArrayList<>();
-        arr.add(cfg1);
-        urlMap.put("/user/*",arr);
-        arr = new ArrayList<>();
-        cfg1 = new SecurityConfig("role_admin");
-        arr.add(cfg1);
-        urlMap.put("/admin/*",arr);
+            urlMap.put((String)var.get("url"), array);
+        }
     }
 
 

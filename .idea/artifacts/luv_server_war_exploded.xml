@@ -60,6 +60,7 @@
           <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
           <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.4" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.6" />
           <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.7.0" />
         </element>
       </element>

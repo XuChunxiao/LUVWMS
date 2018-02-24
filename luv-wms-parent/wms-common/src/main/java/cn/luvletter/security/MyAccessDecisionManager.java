@@ -19,7 +19,7 @@ import java.util.Iterator;
  */
 @Component
 public class MyAccessDecisionManager implements AccessDecisionManager {
-    public static final String test="test";
+
     @Override
     public void decide(Authentication authentication, Object o, Collection<ConfigAttribute> configAttributes) throws AccessDeniedException, InsufficientAuthenticationException {
         if(null== configAttributes || configAttributes.size() <=0) {
@@ -31,12 +31,12 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
             c = configAttribute;
             needRole = c.getAttribute();
             for (GrantedAuthority ga : authentication.getAuthorities()) {
-                if (needRole.trim().equals(ga.getAuthority())) {
+                if (needRole.trim().equals(ga.getAuthority().toLowerCase())) {
                     return;
                 }
             }
         }
-        throw new AccessDeniedException("no right");
+        throw new AccessDeniedException("权限不足!");
     }
 
     @Override

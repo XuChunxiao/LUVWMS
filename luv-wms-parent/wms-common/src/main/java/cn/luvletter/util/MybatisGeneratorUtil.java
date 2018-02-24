@@ -90,8 +90,8 @@ public class MybatisGeneratorUtil {
 			Map<String, Object> table;
 
 			// 查询定制前缀项目的所有表
-			JdbcUtil jdbcUtil = new JdbcUtil(jdbc_driver, jdbc_url, jdbc_username, jdbc_password);
-			List<Map> result = jdbcUtil.selectByParams(sql, null);
+			JdbcUtil jdbcUtil = JdbcUtil.newInstance();
+			List<Map<String,Object>> result = jdbcUtil.selectByParams(sql, null);
 			for (Map map : result) {
 				if(tableName!=null && !tableName.equals(map.get("TABLE_NAME").toString())){
 					continue;

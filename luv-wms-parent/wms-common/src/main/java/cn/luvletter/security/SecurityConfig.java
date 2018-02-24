@@ -2,6 +2,7 @@ package cn.luvletter.security;
 
 import cn.luvletter.filter.CustomAuthenticationFilter;
 import cn.luvletter.filter.JwtAuthenticationTokenFilter;
+import cn.luvletter.security.handler.AjaxAccessDeniedHandler;
 import cn.luvletter.security.handler.AjaxAuthFailHandler;
 import cn.luvletter.security.handler.AjaxAuthSuccessHandler;
 import cn.luvletter.util.PropertyUtil;
@@ -15,6 +16,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -36,6 +38,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+
+    @Autowired
+    private AjaxAuthSuccessHandler ajaxAuthSuccessHandler;
+
+    @Autowired
+    private AjaxAccessDeniedHandler ajaxAccessDeniedHandler;
+
+    @Autowired
+    private AjaxAuthFailHandler ajaxAuthFailHandler;
 
     private static BasicDataSource dataSource;
 
@@ -75,10 +86,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/")
                 .loginProcessingUrl("/login")
                 .usernameParameter("account")
-                .successHandler(new AjaxAuthSuccessHandler())
-                .failureHandler(new AjaxAuthFailHandler())
+                .successHandler(ajaxAuthSuccessHandler)
+                .failureHandler(ajaxAuthFailHandler)
                 .permitAll() //登录页面用户任意访问
                 .and().logout().permitAll()
+                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().exceptionHandling().accessDeniedHandler(ajaxAccessDeniedHandler)
                 //关闭csrf
                 .and().csrf().disable();
         //在身份验证前添加token验证

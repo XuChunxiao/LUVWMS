@@ -1,5 +1,9 @@
 package cn.luvletter.util;
 
+
+
+import cn.luvletter.exception.ApplicationException;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,8 +23,19 @@ public class JdbcUtil {
 	// 定义查询返回的结果集合
 	private ResultSet rs;
 
+	private static JdbcUtil jdbcUtil;
+
+	public static JdbcUtil newInstance(){
+		if(jdbcUtil == null){
+			jdbcUtil = new JdbcUtil(PropertyUtil.getProperty("driver"),
+					PropertyUtil.getProperty("url"),
+					PropertyUtil.getProperty("username"),
+					PropertyUtil.getProperty("password"));
+		}
+		return jdbcUtil;
+	}
 	// 初始化
-	public JdbcUtil(String driver, String url, String username, String password) {
+	private JdbcUtil(String driver, String url, String username, String password) {
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, username, password);
@@ -47,31 +62,50 @@ public class JdbcUtil {
 	}
 
 	// 查询多条记录
-	public List<Map> selectByParams(String sql, List params) throws SQLException {
-		List<Map> list = new ArrayList<> ();
+	public List<Map<String,Object>> selectByParams(String sql, List params)  {
+		List<Map<String,Object>> list = new ArrayList<> ();
 		int index = 1;
-		pstmt = conn.prepareStatement(sql);
-		if (null != params && !params.isEmpty()) {
-			for (int i = 0; i < params.size(); i ++) {
-				pstmt.setObject(index++, params.get(i));
-			}
-		}
-		rs = pstmt.executeQuery();
-		ResultSetMetaData metaData = rs.getMetaData();
-		int cols_len = metaData.getColumnCount();
-		while (rs.next()) {
-			Map map = new HashMap();
-			for (int i = 0; i < cols_len; i ++) {
-				String cols_name = metaData.getColumnName(i + 1);
-				Object cols_value = rs.getObject(cols_name);
-				if (null == cols_value) {
-					cols_value = "";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			if (null != params && !params.isEmpty()) {
+				for (int i = 0; i < params.size(); i++) {
+					pstmt.setObject(index++, params.get(i));
 				}
-				map.put(cols_name, cols_value);
 			}
-			list.add(map);
+			rs = pstmt.executeQuery();
+			ResultSetMetaData metaData = rs.getMetaData();
+			int cols_len = metaData.getColumnCount();
+			while (rs.next()) {
+				Map<String, Object> map = new HashMap<>();
+				for (int i = 0; i < cols_len; i++) {
+					String cols_name = metaData.getColumnLabel(i + 1);
+					Object cols_value = rs.getObject(cols_name);
+					if (null == cols_value) {
+						cols_value = "";
+					}
+					map.put(cols_name, cols_value);
+				}
+				list.add(map);
+			}
+		}catch (SQLException e){
+			e.printStackTrace();
+			throw new ApplicationException(e.getMessage());
 		}
 		return list;
+	}
+	/**
+	 * @Description: 查询多条记录，并转换为bean
+	 * @Date: 21:25 2018/2/24
+	 */
+	public <T> List<T> selectBean(String sql, List params, Class<T> clazz) {
+		List<Map<String,Object>> list = this.selectByParams(sql,params);
+		List<T> resultList = new ArrayList<T>();
+
+		for(Map<String,Object> var2:list){
+			T bean = BeanUtils.map2Bean(var2, clazz);
+			resultList.add(bean);
+		}
+		return resultList;
 	}
 
 	// 释放连接
@@ -91,5 +125,6 @@ public class JdbcUtil {
 		}
 		System.out.println("释放数据库连接");
 	}
+
 
 }

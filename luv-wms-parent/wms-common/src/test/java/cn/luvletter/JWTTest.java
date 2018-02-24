@@ -1,5 +1,6 @@
 package cn.luvletter;
 
+import cn.luvletter.util.JWTUtil;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -32,9 +33,7 @@ public class JWTTest {
             System.out.println(entry.getValue().asDate());
         }
         String expireToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvcmciOiJjbi5sdXZsZXR0ZXIiLCJuYW1lIjoiemVwaHlyIiwiZXhwIjoxNTE4NDk0MTc5LCJpYXQiOjE1MTg0OTQxMTksImFnZSI6MjB9.Po_WHt9u5NJM71PbNtnSK0_PspVWsnPlfGp4d-zDNkU";
-        JWT decode = JWT.decode(expireToken);
-        Map<String, Claim> claims = decode.getClaims();
-        Map<String, Claim> stringClaimMap1 = JWTTest.verifyToken(expireToken);
+        JWTUtil.validateToken(expireToken,SECRET);
     }
     /**
      * @Description:  创建token
