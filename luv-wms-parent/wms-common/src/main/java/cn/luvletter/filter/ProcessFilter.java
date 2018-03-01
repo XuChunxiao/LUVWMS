@@ -27,6 +27,8 @@ public class ProcessFilter implements Filter {
 
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
 
+        httpServletResponse.setHeader("Access-Control-Expose-Headers", "Authorization");
+
         httpServletResponse.setHeader("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
 
         httpServletResponse.setHeader("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");

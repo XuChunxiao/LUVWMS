@@ -2,6 +2,7 @@ package cn.luvletter.filter;
 
 import cn.luvletter.bean.AuthenticationBean;
 import cn.luvletter.exception.ApplicationException;
+import cn.luvletter.exception.InvalidTokenException;
 import cn.luvletter.security.service.OprtService;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.JdbcUtil;
@@ -45,7 +46,16 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                     throw new ApplicationException("username:"+username+"not found");
                 }
                 String password = authenticationBean.getPassword();
-                if (JWTUtil.validateToken(token, password)) {
+                boolean isValid = true;
+                try {
+                    isValid = JWTUtil.validateToken(token, password);
+                }catch (InvalidTokenException e){
+                    //token失效，重新生成token
+                    JWTUtil.refreshToken(httpServletResponse,authenticationBean);
+                    isValid = true;
+                }
+
+                if (isValid) {
                     UsernamePasswordAuthenticationToken authentication = null;
                     try {
                         authentication = new UsernamePasswordAuthenticationToken(username, password, getAuthentication(username));

@@ -15,4 +15,6 @@ public interface SysService {
     ApiResult register(Operator operator);
     ApiResult login(AuthenticationBean authenticationBean, HttpServletResponse response);
     String refresh(String oldToken);
+    ApiResult getAuth();
+
 }

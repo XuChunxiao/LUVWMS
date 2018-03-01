@@ -2,6 +2,7 @@ package cn.luvletter.util;
 
 import cn.luvletter.bean.AuthenticationBean;
 import cn.luvletter.exception.ApplicationException;
+import cn.luvletter.exception.InvalidTokenException;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -43,12 +44,15 @@ public class JWTUtil {
        String token = JWT.create()
                .withHeader(map)//header
                .withClaim("account",authenticationBean.getAccount())//payload
-               .withClaim("role",authenticationBean.getRoleNo())
+               .withClaim("role","role_"+authenticationBean.getRoleNo())
                .withExpiresAt(expiresDate)//过期时间，大于签发时间
                .withIssuedAt(iatDate)//签发时间
                .sign(Algorithm.HMAC256(authenticationBean.getPassword()));
-        response.addHeader(HEADER_STRING,TOKEN_PREFIX+" "+token);
+        response.addHeader(HEADER_STRING,TOKEN_PREFIX+token);
         return token;
+   }
+   public static void refreshToken(HttpServletResponse response, AuthenticationBean authenticationBean) throws UnsupportedEncodingException {
+        addAuthentication(response,authenticationBean);
    }
 
    /**
@@ -71,7 +75,7 @@ public class JWTUtil {
        if(token != null){
            Date expiresAt = JWT.decode(token).getExpiresAt();
            if(expiresAt.compareTo(DateUtil.now())<0) {
-                throw new ApplicationException("token expire!");
+               throw new InvalidTokenException("token expire!");
            }
            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(secret)).build();
            DecodedJWT jwt = null;
@@ -79,6 +83,7 @@ public class JWTUtil {
                jwt = jwtVerifier.verify(token);
            }catch (Exception e){
               e.printStackTrace();
+               return false;
            }
            return true;
        }

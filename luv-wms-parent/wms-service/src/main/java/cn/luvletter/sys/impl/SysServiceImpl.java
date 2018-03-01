@@ -2,6 +2,7 @@ package cn.luvletter.sys.impl;
 
 import cn.luvletter.bean.ApiResult;
 import cn.luvletter.bean.AuthenticationBean;
+import cn.luvletter.constant.SqlConstant;
 import cn.luvletter.sys.api.SysService;
 import cn.luvletter.sys.dao.OperatorMapper;
 import cn.luvletter.sys.dao.OprtRoleMapper;
@@ -10,6 +11,7 @@ import cn.luvletter.sys.model.OperatorExample;
 import cn.luvletter.sys.model.OprtRole;
 import cn.luvletter.util.AESUtil;
 import cn.luvletter.util.JWTUtil;
+import cn.luvletter.util.JdbcUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -81,5 +83,15 @@ public class SysServiceImpl implements SysService {
     @Override
     public String refresh(String oldToken) {
         return null;
+    }
+    /**
+     * @Description: 获得所有url-权限信息
+     * @Date: 16:15 2018/2/28
+     */
+    @Override
+    public ApiResult getAuth() {
+        ApiResult apiResult = new ApiResult();
+        apiResult.setData(JdbcUtil.newInstance().selectByParams(SqlConstant.SELECT_ALL_AUTH,null));
+        return apiResult;
     }
 }

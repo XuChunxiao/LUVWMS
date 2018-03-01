@@ -2,6 +2,7 @@ package cn.luvletter.security;
 
 
 
+import cn.luvletter.constant.SqlConstant;
 import cn.luvletter.util.JdbcUtil;
 import cn.luvletter.util.PropertyUtil;
 import org.springframework.jdbc.support.JdbcUtils;
@@ -29,8 +30,7 @@ public class URLInvocationSecurityMetadataSourceService implements FilterInvocat
 
 
     private void loadResourceDefine() throws SQLException {
-        List<Map<String,Object>> list = JdbcUtil.newInstance().selectByParams("select sr.role_name name,sp.permission_url url from sys_permission sp LEFT JOIN sys_role_permission srp on sp.permission_no=srp.permission_no\n" +
-                "LEFT JOIN sys_role sr on srp.role_no=sr.role_no", null);
+        List<Map<String,Object>> list = JdbcUtil.newInstance().selectByParams(SqlConstant.SELECT_ALL_AUTH, null);
         urlMap = new HashMap<>();
         Collection<ConfigAttribute> array;
         ConfigAttribute cfg;
