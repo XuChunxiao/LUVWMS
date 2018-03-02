@@ -1,9 +1,13 @@
 package cn.luvletter.filter;
 
+import cn.luvletter.util.ResponseUtil;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Zephyr Ji
@@ -13,6 +17,11 @@ import java.io.IOException;
 public class ProcessFilter implements Filter {
 
     private static final String OPTIONS = "OPTIONS";
+    public static final Map<String,String> opM = new HashMap<>();
+
+    static {
+        opM.put("data","option");
+    }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -37,6 +46,8 @@ public class ProcessFilter implements Filter {
 
         if (OPTIONS.equals(method)){
             httpServletResponse.setStatus(200);
+
+            ResponseUtil.returnJson(httpServletResponse,opM);
             return ;
         }
 

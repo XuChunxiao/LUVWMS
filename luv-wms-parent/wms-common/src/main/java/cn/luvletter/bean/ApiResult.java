@@ -20,7 +20,9 @@ public class ApiResult {
     private Object data;
 
     public ApiResult() {}
-
+    public ApiResult(String message){
+        this.message = message;
+    }
     public ApiResult(String message, Object data) {
         this.message = message;
         this.data = data;
