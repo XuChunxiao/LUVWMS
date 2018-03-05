@@ -1,6 +1,7 @@
 package cn.luvletter.sys.api;
 
 import cn.luvletter.bean.ApiResult;
+import cn.luvletter.sys.model.Permission;
 
 /**
  * @author Zephyr Ji
@@ -19,4 +20,16 @@ public interface SettingService {
      * @Date: 14:46 2018/3/2
      */
     ApiResult delNavigation(String id);
+
+    /**
+     * @Description: 新增菜单
+     * @Date: 11:25 2018/3/5
+     */
+    ApiResult saveNavigation(Permission permission);
+
+    /**
+     * @Description: 更新菜单
+     * @Date: 11:27 2018/3/5
+     */
+    ApiResult updateNavigation(Permission permission);
 }

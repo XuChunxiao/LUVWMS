@@ -9,6 +9,10 @@
         <result column="permission_url" property="permissionUrl" jdbcType="VARCHAR" />
         <result column="permission_pid" property="permissionPid" jdbcType="INTEGER" />
     </resultMap>
+    <delete id="delById" parameterType="string">
+        DELETE FROM sys_permission
+        WHERE id = #{id}
+    </delete>
     <select id="findAll" resultMap="BaseResultMap">
         SELECT * FROM sys_permission
     </select>

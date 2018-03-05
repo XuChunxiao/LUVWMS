@@ -3,6 +3,7 @@ package cn.luvletter.sys;
 import cn.luvletter.base.BaseController;
 import cn.luvletter.bean.ApiResult;
 import cn.luvletter.sys.api.SettingService;
+import cn.luvletter.sys.model.Permission;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,5 +24,13 @@ public class SettingController extends BaseController {
     @DeleteMapping("/navigation/{id}")
     public ApiResult delNavigation(@PathVariable("id") String id){
         return settingService.delNavigation(id);
+    }
+    @PostMapping("/navigation")
+    public ApiResult saveNavigation(@RequestBody Permission permission){
+        return settingService.saveNavigation(permission);
+    }
+    @PutMapping("/navigation")
+    public ApiResult updateNavigation(@RequestBody Permission permission){
+        return settingService.updateNavigation(permission);
     }
 }

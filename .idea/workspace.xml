@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="938cedb0-8a66-47fa-9df0-3cb866a95194" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-api-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-api-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-common-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-service-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-web-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-web-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/filter/ProcessFilter.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/filter/ProcessFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/target/classes/cn/luvletter/sys/dao/PermissionMapper.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/target/classes/cn/luvletter/sys/dao/PermissionMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/bean/ApiResult.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/bean/ApiResult.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/ApiResult.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/ApiResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/PermissionMapper.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/PermissionMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/mapper/PermissionMapper.xml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/mapper/PermissionMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/target/classes/cn/luvletter/sys/dao/mapper/PermissionMapper.xml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/target/classes/cn/luvletter/sys/dao/mapper/PermissionMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/luv-server/target/" />
@@ -53,26 +45,26 @@
     <favorites_list name="WMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SettingController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java">
+    <leaf>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/main/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-              <folding>
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PermissionMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/PermissionMapper.java">
+      <file leaf-file-name="SettingController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
-              <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-              <folding />
+              <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+              <folding>
+                <element signature="method#saveNavigation#0;class#SettingController#0" expanded="false" />
+                <element signature="method#updateNavigation#0;class#SettingController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,11 +156,11 @@
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SysServiceImpl.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/PermissionMapper.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/mapper/PermissionMapper.xml" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/ApiResult.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java" />
       </list>
     </option>
@@ -285,6 +277,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="luvletter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1629,7 +1625,8 @@
       <workItem from="1519783899949" duration="2905000" />
       <workItem from="1519800679580" duration="6380000" />
       <workItem from="1519867068178" duration="10493000" />
-      <workItem from="1519956810998" duration="5116000" />
+      <workItem from="1519956810998" duration="6683000" />
+      <workItem from="1520213860353" duration="4596000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1519315448399</created>
@@ -1659,7 +1656,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519883438987</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add setting nav">
+      <created>1519975343739</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1519975343739</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1695,7 +1699,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149646000" />
+    <option name="totallyTimeSpent" value="155809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1737,7 +1741,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6387782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21658097" sideWeight="0.49033818" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21915168" sideWeight="0.49033818" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27382752" sideWeight="0.509915" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27382752" sideWeight="0.50966185" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1759,7 +1763,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="readme" />
     <MESSAGE value="modify security token" />
-    <option name="LAST_COMMIT_MESSAGE" value="modify security token" />
+    <MESSAGE value="add setting nav" />
+    <option name="LAST_COMMIT_MESSAGE" value="add setting nav" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1785,85 +1790,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.4/commons-lang-2.4.jar!/org/apache/commons/lang/time/DateUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/test/java/cn/luvletter/JWTTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/exception/InvalidTokenException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/TokenManager.java" />
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/JwtAuthenticationTokenFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.7.RELEASE/spring-context-4.3.7.RELEASE-sources.jar!/org/springframework/context/ApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="61" column="52" lean-forward="false" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.7.RELEASE/spring-context-4.3.7.RELEASE-sources.jar!/org/springframework/context/annotation/ComponentScan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="205" column="11" lean-forward="true" selection-start-line="205" selection-start-column="11" selection-end-line="205" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="59" lean-forward="true" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SysService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/access/SecurityConfig.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/access/intercept/RunAsManagerImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -2051,7 +1977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
           <caret line="92" column="46" lean-forward="true" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2059,15 +1984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2075,7 +1991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2083,7 +1998,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2091,7 +2005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="32" column="101" lean-forward="false" selection-start-line="32" selection-start-column="101" selection-end-line="32" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2119,20 +2032,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-acl/4.1.3.RELEASE/spring-security-acl-4.1.3.RELEASE.jar!/createAclSchema.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="268">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -2144,21 +2050,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-acl/4.1.3.RELEASE/spring-security-acl-4.1.3.RELEASE.jar!/select.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/jre/lib/plugin.jar!/netscape/security/Principal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/jre/lib/plugin.jar!/netscape/security/Privilege.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/javafx-src.zip!/netscape/javascript/JSException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1945">
+          <caret line="37" column="13" lean-forward="false" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/javafx-src.zip!/netscape/javascript/JSObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/jre/lib/rt.jar!/jdk/Exported.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar!/com/mysql/jdbc/Messages.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar!/com/mysql/jdbc/MySQLConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/base/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="494">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/main/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        <state relative-caret-position="304">
+          <caret line="23" column="38" lean-forward="true" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
           <folding>
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
+            <element signature="method#saveNavigation#0;class#SettingController#0" expanded="false" />
+            <element signature="method#updateNavigation#0;class#SettingController#0" expanded="false" />
           </folding>
         </state>
       </provider>
