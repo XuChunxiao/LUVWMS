@@ -7,6 +7,8 @@ import cn.luvletter.security.service.OprtService;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
@@ -26,7 +28,6 @@ import java.io.UnsupportedEncodingException;
 @Component
 public class AjaxAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         response.setStatus(HttpServletResponse.SC_OK);
@@ -39,15 +40,11 @@ public class AjaxAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandle
         authenticationBean.setRoleNo(JWTUtil.authenticationToString(authentication.getAuthorities()));
         String token = null;
 
-        try {
-            token = JWTUtil.addAuthentication(response,authenticationBean);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+
+        token = JWTUtil.addAuthentication(response,authenticationBean);
         ApiResult apiResult = new ApiResult();
         apiResult.setMessage("登陆成功");
         apiResult.setData(token);
-
         ResponseUtil.returnJson(response,apiResult);
     }
 }

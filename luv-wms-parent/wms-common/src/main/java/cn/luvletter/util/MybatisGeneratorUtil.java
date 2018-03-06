@@ -27,9 +27,9 @@ public class MybatisGeneratorUtil {
 		String jdbc_password="123456";
 		String module="luv-wms-parent";
 		String database="luv_wms";
-		String table_prefix="sys_";
-		String package_name="cn.luvletter.sys";
-		String tableName="sys_oprt_role";
+		String table_prefix="wms_base_";
+		String package_name="cn.luvletter.base";
+		String tableName="wms_base_warehouse";
 		generator(jdbc_driver,
 				jdbc_url,
 				jdbc_username,
@@ -93,13 +93,13 @@ public class MybatisGeneratorUtil {
 			JdbcUtil jdbcUtil = JdbcUtil.newInstance();
 			List<Map<String,Object>> result = jdbcUtil.selectByParams(sql, null);
 			for (Map map : result) {
-				if(tableName!=null && !tableName.equals(map.get("TABLE_NAME").toString())){
+				if(tableName!=null && !tableName.equals(map.get("table_name").toString())){
 					continue;
 				}
-				System.out.println(map.get("TABLE_NAME"));
+				System.out.println(map.get("table_name"));
 				table = new HashMap<>();
-				table.put("table_name", map.get("TABLE_NAME"));
-				table.put("model_name", lineToHump(ObjectUtils.toString(map.get("TABLE_NAME"))).replace("Sys",""));
+				table.put("table_name", map.get("table_name"));
+				table.put("model_name", lineToHump(ObjectUtils.toString(map.get("table_name"))).replace("Sys",""));
 				tables.add(table);
 			}
 			jdbcUtil.release();

@@ -27,11 +27,11 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
             ObjectMapper mapper = new ObjectMapper();
             UsernamePasswordAuthenticationToken authRequest = null;
-            try (InputStream is = request.getInputStream()){
-                AuthenticationBean authenticationBean = mapper.readValue(is,AuthenticationBean.class);
-                authRequest = new UsernamePasswordAuthenticationToken(
-                        authenticationBean.getAccount(), authenticationBean.getPassword());
-            }catch (IOException e) {
+                try (InputStream is = request.getInputStream()){
+                    AuthenticationBean authenticationBean = mapper.readValue(is,AuthenticationBean.class);
+                    authRequest = new UsernamePasswordAuthenticationToken(
+                            authenticationBean.getAccount(), authenticationBean.getPassword());
+                }catch (IOException e) {
                 e.printStackTrace();
                 authRequest = new UsernamePasswordAuthenticationToken(
                         "", "");
