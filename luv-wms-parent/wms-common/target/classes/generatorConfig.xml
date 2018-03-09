@@ -49,15 +49,15 @@
                         password="123456" />
 
         <!-- model生成 -->
-        <javaModelGenerator targetPackage="cn.luvletter.sys.model" targetProject="luv-wms-parent/wms-api/src/main/java" />
+        <javaModelGenerator targetPackage="cn.luvletter.base.model" targetProject="luv-wms-parent/wms-api/src/main/java" />
 
         <!-- MapperXML生成 -->
-        <sqlMapGenerator targetPackage="cn.luvletter.sys.dao.mapper" targetProject="luv-wms-parent/wms-service/src/main/java" />
+        <sqlMapGenerator targetPackage="cn.luvletter.base.dao.mapper" targetProject="luv-wms-parent/wms-service/src/main/java" />
 
         <!-- Mapper接口生成 -->
-        <javaClientGenerator targetPackage="cn.luvletter.sys.dao" targetProject="luv-wms-parent/wms-service/src/main/java" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="cn.luvletter.base.dao" targetProject="luv-wms-parent/wms-service/src/main/java" type="XMLMAPPER" />
 
         <!-- 需要映射的表 -->
-                                    <table tableName="sys_oprt_role" domainObjectName="OprtRole"></table>
+                                    <table tableName="wms_base_storage_area" domainObjectName="StorageArea"></table>
                         </context>
 </generatorConfiguration>

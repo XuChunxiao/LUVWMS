@@ -58,6 +58,6 @@
         <javaClientGenerator targetPackage="cn.luvletter.base.dao" targetProject="luv-wms-parent/wms-service/src/main/java" type="XMLMAPPER" />
 
         <!-- 需要映射的表 -->
-                                    <table tableName="wms_base_warehouse" domainObjectName="WmsBaseWarehouse"></table>
+                                    <table tableName="wms_base_storage_area" domainObjectName="StorageArea"></table>
                         </context>
 </generatorConfiguration>

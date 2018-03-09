@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="luv-server:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="938cedb0-8a66-47fa-9df0-3cb866a95194" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/luv-server/src/main/resources/redis.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/config/RedisConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/RedisUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/resources/redis.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/test/java/cn/luvletter/RedisTest.java" />
+    <list default="true" id="938cedb0-8a66-47fa-9df0-3cb866a95194" name="Default" comment="add redis">
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/StorageAreaService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/StorageLocationService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/WarehouseService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/PrintBean.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/StorageAreaServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/StorageLocationServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/WarehouseServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageAreaController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageLocationController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/WarehouseController.java" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/luv_server_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/luv_server_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_38.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_38.xml" />
@@ -24,7 +34,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_30.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_30.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" />
@@ -55,17 +64,22 @@
       <change beforePath="$PROJECT_DIR$/luv-comm/luv-comm.iml" afterPath="$PROJECT_DIR$/luv-comm/luv-comm.iml" />
       <change beforePath="$PROJECT_DIR$/luv-comm/pom.xml" afterPath="$PROJECT_DIR$/luv-comm/pom.xml" />
       <change beforePath="$PROJECT_DIR$/luv-server/luv-server.iml" afterPath="$PROJECT_DIR$/luv-server/luv-server.iml" />
+      <change beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-api-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-api-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-common-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-common-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-service-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-service-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-web-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/lib/wms-web-1.0-SNAPSHOT.jar" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/luv-wms-parent.iml" afterPath="$PROJECT_DIR$/luv-wms-parent/luv-wms-parent.iml" />
-      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/OprtRole.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/OprtRole.java" />
-      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/OprtRoleExample.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/OprtRoleExample.java" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-api/wms-api.iml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-api/wms-api.iml" />
-      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java" />
-      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthSuccessHandler.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthSuccessHandler.java" />
-      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/base/BaseController.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/base/BaseController.java" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/MybatisGeneratorUtil.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/MybatisGeneratorUtil.java" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/resources/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/security/handler/AjaxAuthSuccessHandler.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/security/handler/AjaxAuthSuccessHandler.class" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/filter/JwtAuthenticationTokenFilter.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/filter/JwtAuthenticationTokenFilter.class" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/util/JWTUtil.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/util/JWTUtil.class" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/util/MybatisGeneratorUtil.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/cn/luvletter/util/MybatisGeneratorUtil.class" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/target/classes/generatorConfig.xml" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-common/wms-common.iml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-common/wms-common.iml" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SysServiceImpl.java" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SysServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/target/classes/cn/luvletter/sys/impl/SysServiceImpl.class" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/target/classes/cn/luvletter/sys/impl/SysServiceImpl.class" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-service/wms-service.iml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-service/wms-service.iml" />
       <change beforePath="$PROJECT_DIR$/luv-wms-parent/wms-web/wms-web.iml" afterPath="$PROJECT_DIR$/luv-wms-parent/wms-web/wms-web.iml" />
     </list>
@@ -104,7 +118,110 @@
     <favorites_list name="WMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CustomAuthenticationFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProcessFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JwtAuthenticationTokenFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/JwtAuthenticationTokenFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrintBean.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/PrintBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyAccessDecisionManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/MyAccessDecisionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AESPasswordEncoder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/AESPasswordEncoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OprtService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/service/OprtService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxAccessDeniedHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAccessDeniedHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxAuthFailHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthFailHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxAuthSuccessHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthSuccessHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,6 +249,8 @@
       <find>compa</find>
       <find>FilterSecurityInterceptor</find>
       <find>14 of 14</find>
+      <find>RedisUtil</find>
+      <find>JWTUtil</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,22 +265,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.class" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/access/AccessDeniedException.class" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/AccessDeniedHandler.class" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/AccessDeniedHandlerImpl.class" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/MyAccessDecisionManager.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/BeanUtils.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JdbcUtil.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAccessDeniedHandler.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthFailHandler.java" />
-        <option value="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/intercept/FilterInvocationSecurityMetadataSource.class" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/service/impl/OprtServiceImpl.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/service/OprtService.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/DateUtil.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/test/java/cn/luvletter/JWTTest.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/exception/InvalidTokenException.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/JwtAuthenticationTokenFilter.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/AuthController.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SysService.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/URLInvocationSecurityMetadataSourceService.java" />
@@ -176,11 +282,9 @@
         <option value="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/4.1.3.RELEASE/spring-security-config-4.1.3.RELEASE.jar!/org/springframework/security/config/annotation/web/configurers/LogoutConfigurer.class" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/constant/SqlConstant.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SysServiceImpl.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/PermissionMapper.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/mapper/PermissionMapper.xml" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/ApiResult.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/sys/SettingController.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/api/SettingService.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SettingServiceImpl.java" />
@@ -188,15 +292,30 @@
         <option value="$PROJECT_DIR$/luv-server/src/main/resources/redis.properties" />
         <option value="$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.class" />
         <option value="$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/config/spring/spring-redis.xml" />
-        <option value="$PROJECT_DIR$/luv-comm/pom.xml" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/resources/redis.properties" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/test/java/cn/luvletter/RedisTest.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/RedisUtil.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/config/RedisConfig.java" />
-        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthSuccessHandler.java" />
         <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/MybatisGeneratorUtil.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageLocationMapper.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/base/BaseController.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageAreaController.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/StorageAreaService.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageLocationController.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/StorageLocationService.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/WarehouseController.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/WarehouseService.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/StorageAreaServiceImpl.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/WarehouseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/StorageLocationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/luv-comm/pom.xml" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/ApiResult.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/PrintBean.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SysServiceImpl.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthSuccessHandler.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java" />
+        <option value="$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/JwtAuthenticationTokenFilter.java" />
       </list>
     </option>
   </component>
@@ -213,32 +332,17 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Program Files (x86)/JetBrains/IntelliJ IDEA 2017.1/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="luv-comm" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="luv-comm" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
+      <expand />
+      <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -262,26 +366,276 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Local Unit Tests">
           <expand>
             <path>
-              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
-              <item name="luv-server" type="616d4139:PackageViewModuleNode" />
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+              <item name="luv-wms-parent/wms-common" type="cbb8eebc:String" user="luv-wms-parent/wms-common" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+              <item name="luv-wms-parent/wms-common" type="cbb8eebc:String" user="luv-wms-parent/wms-common" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+              <item name="luv-wms-parent/wms-common" type="cbb8eebc:String" user="luv-wms-parent/wms-common" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="test" type="cbb8eebc:String" user="test" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+              <item name="luv-wms-parent/wms-common" type="cbb8eebc:String" user="luv-wms-parent/wms-common" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="test" type="cbb8eebc:String" user="test" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+              <item name="luv-wms-parent/wms-common" type="cbb8eebc:String" user="luv-wms-parent/wms-common" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="test" type="cbb8eebc:String" user="test" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="cn" type="cbb8eebc:String" user="cn" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="wms-common" type="cbb8eebc:String" user="wms-common" />
+              <item name="luv-wms-parent/wms-common" type="cbb8eebc:String" user="luv-wms-parent/wms-common" />
+              <item name="src" type="cbb8eebc:String" user="src" />
+              <item name="test" type="cbb8eebc:String" user="test" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="cn" type="cbb8eebc:String" user="cn" />
+              <item name="luvletter" type="cbb8eebc:String" user="luvletter" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="WMS" type="cbb8eebc:String" user="WMS" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="WMS" type="cbb8eebc:String" user="WMS" />
+              <item name="WMS" type="cbb8eebc:String" user="WMS" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="WMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="luvletter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="luvletter" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="luvletter" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="luvletter" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="luvletter" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WMS" type="462c0819:PsiDirectoryNode" />
+              <item name="luv-wms-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="wms-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="luvletter" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+            <path>
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Extensions" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="com.intellij.database" type="61db50fb:ScratchProjectViewPane$MyPsiNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-service" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-service" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-service" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+              <item name="luvletter" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-service" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+              <item name="luvletter" type="1f31426a:PackageElementNode" />
+              <item name="base" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-service" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+              <item name="luvletter" type="1f31426a:PackageElementNode" />
+              <item name="base" type="1f31426a:PackageElementNode" />
+              <item name="impl" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-web" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-web" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-web" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+              <item name="luvletter" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="WMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="wms-web" type="616d4139:PackageViewModuleNode" />
+              <item name="cn" type="1f31426a:PackageElementNode" />
+              <item name="luvletter" type="1f31426a:PackageElementNode" />
+              <item name="base" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -290,7 +644,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -298,20 +652,20 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../开源项目/springBoot/springboot-springSecurity3" />
-    <property name="SearchEverywhereHistoryKey" value="FilterSecurityInterceptor&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/intercept/FilterSecurityInterceptor.class&#10;AccessDeniedHandler&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/AccessDeniedHandler.class&#10;ConcurrentSessionFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/session/ConcurrentSessionFilter.class&#10;DispatcherServlet&#9;PSI&#9;JAVA://org.springframework.web.servlet.DispatcherServlet&#10;ApplicationContext&#9;PSI&#9;JAVA://org.springframework.context.ApplicationContext&#10;ServletContext&#9;PSI&#9;JAVA://javax.servlet.ServletContext&#10;doCreateBean&#9;PSI&#9;JAVA://org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean&#10;DaoAuthenticationProvider&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class&#10;loadUserByUsername&#9;PSI&#9;JAVA://org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername&#10;JdbcDaoImpl&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class&#10;UsernamePasswordAuthenticationFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class&#10;AbstractAuthenticationProcessingFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class&#10;doFilterInternal&#9;PSI&#9;JAVA://org.springframework.web.filter.OncePerRequestFilter#doFilterInternal&#10;ChannelProcessingFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/channel/ChannelProcessingFilter.class&#10;SecurityContextPersistenceFilter&#9;PSI&#9;JAVA://org.springframework.security.web.context.SecurityContextPersistenceFilter&#10;HeaderWriterFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/header/HeaderWriterFilter.class&#10;CSRF_FILTER&#9;PSI&#9;JAVA://org.springframework.security.config.http.SecurityFilters#CSRF_FILTER&#10;DefaultRedirectStrategy&#9;PSI&#9;JAVA://org.springframework.security.web.DefaultRedirectStrategy" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/code/JAVA/毕业设计/WMS/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/StorageAreaService.java&#10;FilterSecurityInterceptor&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/intercept/FilterSecurityInterceptor.class&#10;AccessDeniedHandler&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/AccessDeniedHandler.class&#10;ConcurrentSessionFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/session/ConcurrentSessionFilter.class&#10;DispatcherServlet&#9;PSI&#9;JAVA://org.springframework.web.servlet.DispatcherServlet&#10;ApplicationContext&#9;PSI&#9;JAVA://org.springframework.context.ApplicationContext&#10;ServletContext&#9;PSI&#9;JAVA://javax.servlet.ServletContext&#10;doCreateBean&#9;PSI&#9;JAVA://org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean&#10;DaoAuthenticationProvider&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class&#10;loadUserByUsername&#9;PSI&#9;JAVA://org.springframework.security.core.userdetails.UserDetailsService#loadUserByUsername&#10;JdbcDaoImpl&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-core/4.1.3.RELEASE/spring-security-core-4.1.3.RELEASE.jar!/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.class&#10;UsernamePasswordAuthenticationFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.class&#10;AbstractAuthenticationProcessingFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class&#10;doFilterInternal&#9;PSI&#9;JAVA://org.springframework.web.filter.OncePerRequestFilter#doFilterInternal&#10;ChannelProcessingFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/access/channel/ChannelProcessingFilter.class&#10;SecurityContextPersistenceFilter&#9;PSI&#9;JAVA://org.springframework.security.web.context.SecurityContextPersistenceFilter&#10;HeaderWriterFilter&#9;FILE&#9;jar://D:/repo/repository/org/springframework/security/spring-security-web/4.1.3.RELEASE/spring-security-web-4.1.3.RELEASE.jar!/org/springframework/security/web/header/HeaderWriterFilter.class&#10;CSRF_FILTER&#9;PSI&#9;JAVA://org.springframework.security.config.http.SecurityFilters#CSRF_FILTER&#10;DefaultRedirectStrategy&#9;PSI&#9;JAVA://org.springframework.security.web.DefaultRedirectStrategy" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\code\JAVA\毕业设计\WMS\luv-server\src\main\webapp" />
-      <recent name="D:\code\JAVA\毕业设计\WMS\luv-wms-parent" />
-      <recent name="D:\code\JAVA\毕业设计\WMS" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\JAVA\毕业设计\WMS\luv-wms-parent\wms-common\src\main\resources" />
       <recent name="D:\code\JAVA\毕业设计\WMS\luv-server\src\main\webapp\WEB-INF" />
       <recent name="D:\code\JAVA\毕业设计\WMS\luv-server\src\main\resources" />
       <recent name="D:\code\JAVA\毕业设计\WMS\luv-wms-parent\wms-common\src\main\java\cn\luvletter\interceptor" />
       <recent name="D:\code\JAVA\毕业设计\WMS\luv-server\src\main\webapp\WEB-INF\config\spring" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\JAVA\毕业设计\WMS\luv-server\src\main\webapp" />
+      <recent name="D:\code\JAVA\毕业设计\WMS\luv-wms-parent" />
+      <recent name="D:\code\JAVA\毕业设计\WMS" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1116,7 +1470,11 @@
       <workItem from="1519956810998" duration="6683000" />
       <workItem from="1520213860353" duration="11068000" />
       <workItem from="1520299756060" duration="628000" />
-      <workItem from="1520300956953" duration="12833000" />
+      <workItem from="1520300956953" duration="15787000" />
+      <workItem from="1520327970154" duration="245000" />
+      <workItem from="1520384984439" duration="228000" />
+      <workItem from="1520471780875" duration="1280000" />
+      <workItem from="1520573424559" duration="5876000" />
     </task>
     <task id="LOCAL-00001" summary="readme">
       <created>1519315448399</created>
@@ -1160,7 +1518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520226812257</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add redis">
+      <created>1520318353746</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1520318353747</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1196,7 +1561,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175742000" />
+    <option name="totallyTimeSpent" value="186325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1209,13 +1574,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49678457" sideWeight="0.5030257" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1223,18 +1589,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6710875" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56498677" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32625994" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54376656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54376656" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2506427" sideWeight="0.49033818" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24485861" sideWeight="0.49033818" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27382752" sideWeight="0.509915" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27382752" sideWeight="0.50966185" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1260,7 +1626,8 @@
     <MESSAGE value="readme" />
     <MESSAGE value="modify security token" />
     <MESSAGE value="add setting nav" />
-    <option name="LAST_COMMIT_MESSAGE" value="add setting nav" />
+    <MESSAGE value="add redis" />
+    <option name="LAST_COMMIT_MESSAGE" value="add redis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1272,7 +1639,7 @@
           <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="105" />
+      <option name="time" value="110" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -1295,95 +1662,241 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/2.9.0/jedis-2.9.0-sources.jar!/redis/clients/jedis/JedisPoolConfig.java">
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/WarehouseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="513">
+          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageAreaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-web/src/main/java/cn/luvletter/base/StorageLocationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/base/StorageAreaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/base/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar!/org/gjt/mm/mysql/Driver.class" />
+    <entry file="jar://$USER_HOME$/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar!/com/mysql/jdbc/Driver.class" />
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="4179" column="48" lean-forward="false" selection-start-line="4179" selection-start-column="48" selection-end-line="4179" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/sql/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/sql/Array.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-950">
+          <caret line="69" column="17" lean-forward="false" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/sql/BatchUpdateException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6951">
+          <caret line="162" column="43" lean-forward="false" selection-start-line="162" selection-start-column="43" selection-end-line="162" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/sql/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1767">
+          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.7.RELEASE/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/context/ContextLoaderListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <marker date="1498460941443" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1498460941443" expanded="false" signature="155:234" ph="..." />
+            <marker date="1498460941443" expanded="true" signature="364:371" ph="{}" />
+            <marker date="1498460941443" expanded="false" signature="436:447" ph=" { " />
+            <marker date="1498460941443" expanded="false" signature="462:468" ph=" }" />
+            <marker date="1498460941443" expanded="true" signature="532:606" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="668:820" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.7.RELEASE/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/context/ContextLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="72" column="33" lean-forward="false" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <folding>
+            <marker date="1498460941443" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1498460941443" expanded="false" signature="155:1464" ph="..." />
+            <marker date="1498460941443" expanded="true" signature="2677:2684" ph="{}" />
+            <marker date="1498460941443" expanded="false" signature="2741:2752" ph=" { " />
+            <marker date="1498460941443" expanded="false" signature="2775:2781" ph=" }" />
+            <marker date="1498460941443" expanded="true" signature="2869:3234" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="3326:6306" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="6391:6855" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="6933:7811" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="7931:8900" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="8996:10377" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="10534:11602" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="11724:12310" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="12394:13262" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="13338:14814" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="14890:15213" ph="{...}" />
+            <marker date="1498460941443" expanded="true" signature="15226:15660" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/config/spring/spring-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/StorageAreaServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="20" />
           <folding>
-            <element signature="e#1093#1104#0" expanded="false" />
+            <element signature="e#490#491#0" expanded="false" />
+            <element signature="e#517#518#0" expanded="false" />
+            <element signature="e#585#586#0" expanded="false" />
+            <element signature="e#612#613#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/DefaultHashOperations.class">
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/WarehouseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#398#399#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+            <element signature="e#482#483#0" expanded="false" />
+            <element signature="e#509#510#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/base/impl/StorageLocationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="20" />
+          <folding>
+            <element signature="e#422#423#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#506#507#0" expanded="false" />
+            <element signature="e#533#534#0" expanded="false" />
+            <element signature="e#609#610#0" expanded="false" />
+            <element signature="e#636#637#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JdbcUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/ConsoleAppender.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/HashOperations.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="792" column="46" lean-forward="false" selection-start-line="792" selection-start-column="46" selection-end-line="792" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/builders/AnnotatedBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAccessDeniedHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="63" lean-forward="false" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/luv-server/src/main/resources/redis.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/lang/Cloneable.java">
+    <entry file="file://$PROJECT_DIR$/luv-server/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+        <state relative-caret-position="228">
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/BaseObjectPoolConfig.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar!/org/slf4j/impl/StaticLoggerBinder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="59" lean-forward="false" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
+        <state relative-caret-position="114">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <marker date="1506495714552" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1506495714552" expanded="false" signature="138:267" ph="..." />
+            <marker date="1506495714552" expanded="false" signature="700:711" ph=" { " />
+            <marker date="1506495714552" expanded="false" signature="728:734" ph=" }" />
+            <marker date="1506495714552" expanded="true" signature="769:1026" ph="{...}" />
+            <marker date="1506495714552" expanded="false" signature="1072:1083" ph=" { " />
+            <marker date="1506495714552" expanded="false" signature="1109:1115" ph=" }" />
+            <marker date="1506495714552" expanded="false" signature="1161:1172" ph=" { " />
+            <marker date="1506495714552" expanded="false" signature="1201:1207" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-comm/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="185" column="20" lean-forward="false" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/config/spring/spring-redis.xml">
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/config/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.jar!/org/apache/commons/pool2/impl/GenericObjectPoolConfig.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="345">
+          <caret line="44" column="25" lean-forward="false" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1391,629 +1904,205 @@
     <entry file="file://$PROJECT_DIR$/luv-server/src/main/webapp/WEB-INF/config/spring/spring-mvc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="57" lean-forward="true" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisPoolConfig.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.7.RELEASE/spring-web-4.3.7.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/connection/jedis/JedisConnectionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-comm/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/redis/clients/jedis/2.9.0/jedis-2.9.0.jar!/redis/clients/jedis/JedisPool.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="165" column="49" lean-forward="true" selection-start-line="165" selection-start-column="49" selection-end-line="165" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/test/java/cn/luvletter/RedisTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/resources/redis.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/AbstractOperations.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/constant/SqlConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="456">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/ApiResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding>
-            <element signature="e#383#384#0" expanded="false" />
-            <element signature="e#421#422#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/AuthenticationBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/base/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/exception/InvalidTokenException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/exception/ApplicationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/interceptor/ProcessInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/plugin/SerializablePlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-814">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/plugin/CommentGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/AESPasswordEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/service/OprtService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_144/src.zip!/java/util/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="530" column="34" lean-forward="false" selection-start-line="530" selection-start-column="28" selection-end-line="530" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/com/auth0/java-jwt/3.1.0/java-jwt-3.1.0.jar!/com/auth0/jwt/JWT.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/DefaultHashOperations.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="166" column="17" lean-forward="true" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/data/spring-data-redis/1.8.6.RELEASE/spring-data-redis-1.8.6.RELEASE.jar!/org/springframework/data/redis/core/HashOperations.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="94" column="70" lean-forward="true" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/JwtAuthenticationTokenFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/RedisUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/support/DefaultSingletonBeanRegistry.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#8086#8587#0" expanded="true" />
+            <element signature="e#8586#8587#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/config/RedisConfig.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="523" column="0" lean-forward="false" selection-start-line="523" selection-start-column="0" selection-end-line="523" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/impl/SysServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.7.RELEASE/spring-beans-4.3.7.RELEASE.jar!/org/springframework/beans/factory/annotation/InjectionMetadata.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/JWTUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-266">
+          <caret line="45" column="60" lean-forward="true" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/URLInvocationSecurityMetadataSourceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/URLFilterSecurityInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/MyAccessDecisionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/AESPasswordEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/service/OprtService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAccessDeniedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthFailHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/security/handler/AjaxAuthSuccessHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/OprtRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-api/src/main/java/cn/luvletter/sys/model/OprtRoleExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7431">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/OprtRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-service/src/main/java/cn/luvletter/sys/dao/mapper/OprtRoleMapper.xml">
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/CustomAuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2470">
-          <caret line="130" column="35" lean-forward="true" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
-          <folding>
-            <marker date="1519304201370" expanded="true" signature="3484:3593" ph="select from sys_oprt_role" />
-            <marker date="1519304201370" expanded="true" signature="3680:3743" ph="delete from sys_oprt_role... " />
-            <marker date="1519304201370" expanded="true" signature="3848:3873" ph="delete from sys_oprt_role... " />
-            <marker date="1519304201370" expanded="true" signature="4055:4249" ph="insert into sys_oprt_role... " />
-            <marker date="1519304201370" expanded="true" signature="5218:5252" ph="select count... sys_oprt_role" />
-            <marker date="1519304201370" expanded="true" signature="6056:6275" ph="update sys_oprt_role... " />
-            <marker date="1519304201370" expanded="true" signature="6488:6850" ph="update sys_oprt_role... " />
-            <marker date="1519304201370" expanded="true" signature="6951:7145" ph="update sys_oprt_role... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        <state relative-caret-position="383">
+          <caret line="36" column="28" lean-forward="true" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar!/com/mysql/jdbc/ResultSetImpl.class">
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/ProcessFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="1415" column="0" lean-forward="false" selection-start-line="1415" selection-start-column="0" selection-end-line="1415" selection-end-column="0" />
-          <folding>
-            <marker date="1520301063299" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1520301063299" expanded="false" signature="138:1195" ph="..." />
-            <marker date="1520301063299" expanded="true" signature="3975:4309" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="4460:4711" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="4898:5487" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="5596:6393" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="6537:8363" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="8426:9965" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="10022:10214" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="10273:11818" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="11868:12422" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="12474:13045" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="13103:14078" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="14135:14176" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="14248:14544" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="14626:15384" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="15439:15627" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="15691:16388" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="16436:16447" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="16473:16479" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="16533:16652" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="16698:16735" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="16803:17055" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="17139:17393" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="17458:17704" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="17755:17968" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="18069:18318" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="18405:18642" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="18692:18733" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="18836:19280" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="19380:19977" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="20081:20607" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="20769:21464" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="21531:23068" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="23117:23706" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="23761:23844" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="23908:23971" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="24048:24199" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="24278:24350" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="24425:25357" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="25363:25381" ph="/**...*/" />
-            <marker date="1520301063299" expanded="true" signature="25466:27680" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="27757:27828" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="27834:27852" ph="/**...*/" />
-            <marker date="1520301063299" expanded="true" signature="27939:28017" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="28138:30566" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="30644:31193" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="31273:31346" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="31409:32198" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="32260:32322" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="32391:35061" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="35147:35815" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="35886:35954" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="36041:36303" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="36366:36661" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="36726:36791" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="36889:38292" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="38358:38415" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="38506:39054" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="39122:39188" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="39272:39518" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="39570:39994" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="40076:40294" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="40370:40883" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="40961:41037" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="41131:41209" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="41262:41543" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="41605:41667" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="41748:41838" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="41892:41920" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="41976:42132" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="42195:42260" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="42337:43150" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="43215:43280" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="43359:43429" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="43552:50044" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="50088:50229" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="50296:50415" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="50484:50551" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="50653:50723" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="50798:50880" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="50973:52636" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="52693:52814" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="52866:52982" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="53022:53265" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="53330:53594" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="53661:53727" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="53821:55440" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="55501:59734" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="59797:59861" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="59951:61968" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="62031:62086" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="62173:65157" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="65222:65287" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="65388:66328" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="66393:66613" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="66677:66725" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="66811:66902" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="66986:67163" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="67258:67975" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="68062:68759" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="68831:69855" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="69922:70342" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="70414:70475" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="70570:74492" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="74589:75804" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="75889:76510" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="76582:76729" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="76825:85935" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="86007:86078" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="86164:87097" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="87177:87540" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="87616:89826" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="89900:92553" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="92623:92683" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="92776:96441" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="96513:96580" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="96703:100105" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="100165:100213" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="100287:100349" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="100446:104747" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="104823:106062" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="106191:106953" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="107092:107468" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="107607:108423" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="108572:108971" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="109059:109144" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="109211:109622" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="109691:109702" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="109728:109734" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="109801:115263" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="115344:118624" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="118708:118782" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="118866:118907" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="118976:119043" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="119136:119205" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="119302:122280" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="122392:122459" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="122558:122651" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="122772:122867" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="122918:123001" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="123061:123122" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="123168:123644" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="123680:123917" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="124010:124745" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="124810:128746" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="128813:128879" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="128973:129895" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="129953:130690" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="130757:131559" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="131628:131695" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="131770:132827" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="132929:137081" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="137144:137251" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="137328:137415" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="137480:137545" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="137624:137694" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="137848:143833" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="143964:144812" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="144885:144997" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="145084:145176" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="145251:145321" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="145410:145485" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="145651:156003" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="156144:157050" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="157097:157139" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="157145:157163" ph="/**...*/" />
-            <marker date="1520301063299" expanded="true" signature="157241:157458" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="157464:157482" ph="/**...*/" />
-            <marker date="1520301063299" expanded="true" signature="157562:157636" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="157670:157681" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="157705:157711" ph=" }" />
-            <marker date="1520301063299" expanded="false" signature="157742:157753" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="157774:157780" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="157838:158249" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="158309:158719" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="158777:158896" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="158946:158987" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="159042:159197" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="159254:159384" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="159435:159559" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="159609:159732" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="159905:161715" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="161763:162469" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="162526:162567" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="162623:162664" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="162712:163828" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="163935:164348" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="164427:164593" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="164710:165411" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="165529:165946" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="166061:166293" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="166468:167071" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="167196:167937" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="168048:168458" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="168609:169550" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="169598:170401" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="170453:170754" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="170828:176689" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="176741:176778" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="176813:176824" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="176879:176885" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="176936:176977" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="177037:177661" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="177715:177763" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="177818:177866" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="177920:177968" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="178007:178018" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="178046:178052" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="178136:178269" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="178340:178746" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="178807:179159" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="179205:179445" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="179536:179587" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="179655:179908" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="179987:180245" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="180310:180554" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="180615:180852" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="180939:181194" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="181273:181528" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="181640:182657" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="182688:182812" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="182884:182932" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183007:183055" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183155:183196" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183298:183377" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183463:183504" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183592:183662" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183763:183804" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="183907:183987" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184057:184098" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184171:184212" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184292:184333" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184415:184482" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184556:184597" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184673:184737" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184814:184855" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="184934:184999" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185098:185139" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185245:185333" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185403:185451" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185530:185597" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185671:185712" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185788:185852" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="185930:185971" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186051:186117" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186193:186234" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186312:186377" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186449:186490" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186564:186627" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186701:186742" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186818:186882" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="186948:186989" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187057:187118" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187196:187237" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187326:187367" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187447:187513" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187604:187670" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187738:187786" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187857:187905" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="187955:187996" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188072:188113" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188191:188256" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188334:188375" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188455:188521" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188595:188636" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188712:188776" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188860:188901" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="188987:189056" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="189107:189147" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="189189:189362" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="189424:189435" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="189468:189474" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="189487:190992" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar!/com/mysql/jdbc/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding>
-            <marker date="1520301063299" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1520301063299" expanded="false" signature="138:999" ph="..." />
-            <marker date="1520301063299" expanded="true" signature="4487:4494" ph="{}" />
-            <marker date="1520301063299" expanded="true" signature="4594:4672" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="4824:7381" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="7452:9066" ph="{...}" />
-            <marker date="1520301063299" expanded="false" signature="9107:9118" ph=" { " />
-            <marker date="1520301063299" expanded="false" signature="9165:9171" ph=" }" />
-            <marker date="1520301063299" expanded="true" signature="9223:9357" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="9428:9510" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="9562:9692" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="9811:9888" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="9990:10094" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="10213:10523" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="10659:10758" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="10911:11622" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="11762:11860" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="12021:12143" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="12321:17044" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="17252:18351" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="18565:23869" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="23919:24203" ph="{...}" />
-            <marker date="1520301063299" expanded="true" signature="24216:35499" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/util/MybatisGeneratorUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        <state relative-caret-position="399">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/filter/JwtAuthenticationTokenFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/luv-wms-parent/wms-common/src/main/java/cn/luvletter/bean/PrintBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

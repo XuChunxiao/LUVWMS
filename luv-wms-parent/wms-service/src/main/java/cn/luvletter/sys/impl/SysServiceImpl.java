@@ -33,7 +33,8 @@ import java.util.List;
 public class SysServiceImpl implements SysService {
 
     private AuthenticationManager authenticationManager;
-
+    @Autowired
+    private JWTUtil jwtUtil;
     @Autowired
     private OperatorMapper operatorMapper;
     @Autowired
@@ -72,11 +73,8 @@ public class SysServiceImpl implements SysService {
         }
         String token = null;
 
-        try {
-            token = JWTUtil.addAuthentication(response,authenticationBean);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        token = jwtUtil.addAuthentication(response,authenticationBean);
+
         return new ApiResult(token,null);
     }
 

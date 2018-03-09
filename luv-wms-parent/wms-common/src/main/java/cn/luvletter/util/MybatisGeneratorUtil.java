@@ -29,7 +29,7 @@ public class MybatisGeneratorUtil {
 		String database="luv_wms";
 		String table_prefix="wms_base_";
 		String package_name="cn.luvletter.base";
-		String tableName="wms_base_warehouse";
+		String tableName="wms_base_storage_area";
 		generator(jdbc_driver,
 				jdbc_url,
 				jdbc_username,
@@ -99,7 +99,7 @@ public class MybatisGeneratorUtil {
 				System.out.println(map.get("table_name"));
 				table = new HashMap<>();
 				table.put("table_name", map.get("table_name"));
-				table.put("model_name", lineToHump(ObjectUtils.toString(map.get("table_name"))).replace("Sys",""));
+				table.put("model_name", lineToHump(ObjectUtils.toString(map.get("table_name"))).replace("WmsBase",""));
 				tables.add(table);
 			}
 			jdbcUtil.release();
