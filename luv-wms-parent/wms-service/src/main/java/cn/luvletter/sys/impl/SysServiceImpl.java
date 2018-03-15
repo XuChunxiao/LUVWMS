@@ -34,8 +34,6 @@ public class SysServiceImpl implements SysService {
 
     private AuthenticationManager authenticationManager;
     @Autowired
-    private JWTUtil jwtUtil;
-    @Autowired
     private OperatorMapper operatorMapper;
     @Autowired
     private OprtRoleMapper oprtRoleMapper;
@@ -73,7 +71,7 @@ public class SysServiceImpl implements SysService {
         }
         String token = null;
 
-        token = jwtUtil.addAuthentication(response,authenticationBean);
+        token = JWTUtil.addAuthentication(response,authenticationBean);
 
         return new ApiResult(token,null);
     }

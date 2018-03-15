@@ -11,6 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Component;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import java.util.*;
  * @ Description: TODO
  * @ Date 2018/2/13
  */
+@Component
 public class JWTUtil {
    private static final String TOKEN_PREFIX = "Bearer";
    private static final String HEADER_STRING = "Authorization";
@@ -30,7 +32,7 @@ public class JWTUtil {
    private static final String REDIS_TOKEN_SECRIET = "LUVLETTER";
 
    @Autowired
-   private static RedisUtil redisUtil;
+   private RedisUtil redisUtil;
    /**
     * @Description: 将刷新token添加到redis中
     * @Date: 11:11 2018/3/6
@@ -92,7 +94,7 @@ public class JWTUtil {
             e.printStackTrace();
         }
         JWTUtil jwtUtil = new JWTUtil();
-        jwtUtil.addRedisRefreshToken(authenticationBean.getAccount());
+        //jwtUtil.addRedisRefreshToken(authenticationBean.getAccount());
         response.addHeader(HEADER_STRING,TOKEN_PREFIX+token);
         return token;
    }

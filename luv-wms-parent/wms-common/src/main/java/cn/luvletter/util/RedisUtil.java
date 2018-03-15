@@ -5,6 +5,8 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 /**
  * @author Zephyr Ji
  * @ Description: TODO
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class RedisUtil {
-    @Autowired
+    @Resource
     private RedisTemplate redisTemplate;
 
     public void hmSet(Object name, Object key, Object value){

@@ -23,7 +23,7 @@ public class RedisConfig {
     @Autowired
     private Environment env;
     @Bean
-    public JedisPoolConfig jedisPoolConfigBean(){
+    public JedisPoolConfig jedisPoolConfig(){
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxIdle(env.getProperty("redis.maxIdle",Integer.class));
         poolConfig.setMaxTotal(env.getProperty("redis.maxActive",Integer.class));
@@ -32,7 +32,7 @@ public class RedisConfig {
         return poolConfig;
     }
     @Bean
-    public JedisConnectionFactory jedisConnectionFactoryBean(JedisPoolConfig jedisPoolConfig){
+    public JedisConnectionFactory jedisConnectionFactory(JedisPoolConfig jedisPoolConfig){
         JedisConnectionFactory connectionFactory = new JedisConnectionFactory();
         connectionFactory.setHostName(env.getProperty("redis.host"));
         connectionFactory.setPort(env.getProperty("redis.port",Integer.class));
@@ -42,7 +42,7 @@ public class RedisConfig {
         return connectionFactory;
     }
     @Bean
-    public RedisTemplate redisTemplateBean (JedisConnectionFactory jedisConnectionFactory){
+    public RedisTemplate redisTemplate (JedisConnectionFactory jedisConnectionFactory){
         RedisTemplate template = new RedisTemplate();
         RedisSerializer stringSerializer = new StringRedisSerializer();
         template.setConnectionFactory(jedisConnectionFactory);
@@ -50,7 +50,7 @@ public class RedisConfig {
         return template;
     }
     @Bean
-    public RedisCacheManager redisCacheManagerBean(RedisTemplate redisTemplate){
+    public RedisCacheManager redisCacheManager(RedisTemplate redisTemplate){
         RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
         cacheManager.setDefaultExpiration(env.getProperty("redis.expiration",Long.class));
         return cacheManager;

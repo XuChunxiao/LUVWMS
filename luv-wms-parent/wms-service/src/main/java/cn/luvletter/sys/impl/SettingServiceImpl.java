@@ -4,6 +4,7 @@ import cn.luvletter.bean.ApiResult;
 import cn.luvletter.sys.api.SettingService;
 import cn.luvletter.sys.dao.PermissionMapper;
 import cn.luvletter.sys.model.Permission;
+import cn.luvletter.util.JWTUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

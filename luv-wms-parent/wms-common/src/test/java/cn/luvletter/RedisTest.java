@@ -24,10 +24,10 @@ public class RedisTest {
     @Test
     public void test01(){
         ValueOperations valueOperations = redisTemplate.opsForValue();
-        valueOperations.set("wee","123456789");
+        valueOperations.set("eer","123456789");
         Long test1 = valueOperations.size("test1");
         System.out.println(test1);
-        Object wee = valueOperations.get("wee");
+        Object wee = valueOperations.get("eer");
         System.out.println(wee.toString());
     }
 }
