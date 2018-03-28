@@ -29,7 +29,7 @@ public class MybatisGeneratorUtil {
 		String database="luv_wms";
 		String table_prefix="wms_base_";
 		String package_name="cn.luvletter.base";
-		String tableName="wms_base_storage_area";
+		String tableName="wms_base_goods";
 		generator(jdbc_driver,
 				jdbc_url,
 				jdbc_username,
