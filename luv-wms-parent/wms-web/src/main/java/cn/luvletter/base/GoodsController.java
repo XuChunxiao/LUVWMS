@@ -25,7 +25,12 @@ public class GoodsController extends BaseController {
         return goodsService.getGoods(serarchVo,httpServletRequest);
     }
     @PutMapping
-    public ApiResult update(@RequestBody Goods goods, HttpServletRequest httpServletRequest){
+    public ApiResult update(@Validated @RequestBody Goods goods, BindingResult br, HttpServletRequest httpServletRequest){
+        ApiResult apiResult = new ApiResult();
+        if(br.hasErrors()){
+            apiResult.isFalse().setMessage(br.getFieldErrors());
+            return apiResult;
+        }
         return goodsService.update(goods, httpServletRequest);
     }
     @DeleteMapping("/{id}")

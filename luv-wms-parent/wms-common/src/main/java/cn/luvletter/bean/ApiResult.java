@@ -24,6 +24,8 @@ public class ApiResult {
      */
     private Object data;
 
+    private long total;
+
     public ApiResult() {}
     public ApiResult(String message){
         this.message = message;
@@ -44,6 +46,14 @@ public class ApiResult {
                 sb.append(fieldError.getDefaultMessage());
             }
             this.setMessage(sb.toString());
+    }
+
+    public long getTotal() {
+        return total;
+    }
+
+    public void setTotal(long total) {
+        this.total = total;
     }
 
     public String getMessage() {

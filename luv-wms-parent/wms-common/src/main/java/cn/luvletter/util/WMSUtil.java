@@ -102,9 +102,9 @@ public class WMSUtil {
     public String getQiuNiuUpToken(String fileName){
         Auth auth = Auth.create(WMSConstant.ACCESSKEY, WMSConstant.SECRETKEY);
         StringMap putPolicy = new StringMap();
-        String imgName = fileName.substring(0,fileName.lastIndexOf("."));
-        String imgURL = WMSConstant.CDN_URL_PER+"/"+imgName;
-        putPolicy.put("returnBody","{\"code\":\"0\",\"imgURL\":\""+imgURL+"\",\"size\":\"$fsize\"}");
+        //String imgName = fileName.substring(0,fileName.lastIndexOf("."));
+        String imgURL = WMSConstant.CDN_URL_PER+"/"+fileName;
+        putPolicy.put("returnBody","{\"code\":\"0\",\"imgURL\":\""+imgURL+"\",\"size\":\"$(fsize)\"}");
         long expireSeconds = 60;
         return auth.uploadToken(WMSConstant.BUCKET,fileName,expireSeconds,putPolicy);
     }

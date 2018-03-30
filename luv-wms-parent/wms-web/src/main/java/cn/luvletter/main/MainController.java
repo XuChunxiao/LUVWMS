@@ -35,7 +35,6 @@ public class MainController extends BaseController {
             apiResult.isFalse().setMessage("文件名格式不正确");
             return apiResult;
         }
-//        fileName = fileName.substring(0,fileName.lastIndexOf("."));
         String qiuNiuUpToken = wmsUtil.getQiuNiuUpToken(fileName);
         apiResult.setData(qiuNiuUpToken);
         return apiResult;

@@ -8,6 +8,7 @@ import cn.luvletter.base.vo.GoodsSerarchVo;
 import cn.luvletter.bean.ApiResult;
 import cn.luvletter.util.DateUtil;
 import cn.luvletter.util.WMSUtil;
+import com.sun.deploy.association.utility.AppUtility;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,12 +56,30 @@ public class GoodsServiceImpl implements GoodsService{
         }
         List<Goods> goods = goodsMapper.selectByExample(goodsExample);
         apiResult.setData(goods);
+        apiResult.setTotal(goodsMapper.countByExample(goodsExample));
         return apiResult;
     }
 
     @Override
     public ApiResult update(Goods goods, HttpServletRequest httpServletRequest) {
-        return null;
+        final ApiResult apiResult = new ApiResult();
+        final String currUser = wmsUtil.getCurrUser(httpServletRequest);
+        GoodsExample goodsExample = new GoodsExample();
+        goodsExample.createCriteria().andIdEqualTo(goods.getId());
+        List<Goods> goodsList = goodsMapper.selectByExample(goodsExample);
+        if(goodsList == null || goodsList.size()==0){
+            apiResult.isFalse().setMessage("系统未找到此商品");
+            return apiResult;
+        }
+        goods.setGmtModified(DateUtil.now());
+        int i = goodsMapper.updateByPrimaryKeySelective(goods);
+        if(i == 1){
+            logger.info("更新商品：goods："+goods.toString()+"用户："+currUser);
+            apiResult.setMessage("更新成功");
+        }else {
+            apiResult.isFalse().setMessage("更新失败");
+        }
+        return apiResult;
     }
 
     @Override

@@ -38,8 +38,10 @@ public class StorageAreaServiceImpl implements StorageAreaService {
         storageAreaExample.setStart(start);
         storageAreaExample.setLimit(limit);
         storageAreaExample.createCriteria().andWarehouseNoEqualTo(currWNo);
+        storageAreaExample.setOrderByClause("gmt_create desc");
         List<StorageArea> storageAreas = storageAreaMapper.selectByExample(storageAreaExample);
         apiResult.setData(storageAreas);
+        apiResult.setTotal(storageAreaMapper.countByExample(storageAreaExample));
         return apiResult;
     }
 

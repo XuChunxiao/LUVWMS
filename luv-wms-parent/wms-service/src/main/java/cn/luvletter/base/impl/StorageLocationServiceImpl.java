@@ -40,6 +40,7 @@ public class StorageLocationServiceImpl implements StorageLocationService {
         storageLocationExample.createCriteria().andWarehouseNoEqualTo(currWNo);
         List<StorageLocation> storageLocations = storageLocationMapper.selectByExample(storageLocationExample);
         apiResult.setData(storageLocations);
+        apiResult.setTotal(storageLocationMapper.countByExample(storageLocationExample));
         return apiResult;
     }
 
