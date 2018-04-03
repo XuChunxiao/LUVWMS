@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController extends BaseController {
     @Autowired
     private WMSUtil wmsUtil;
+    @Autowired
+    private MainService mainService;
     /**
      * @Description: 根据文件名获取七牛上传凭证
      * @Date: 17:02 2018/3/28
@@ -39,4 +41,21 @@ public class MainController extends BaseController {
         apiResult.setData(qiuNiuUpToken);
         return apiResult;
     }
+    /**
+     * @Description: 列表字段翻译
+     * @Date: 15:07 2018/4/2
+     */
+    @GetMapping("/comboBox")
+    @ResponseBody
+    public ApiResult comboBox(@RequestParam("value") String value,
+                              @RequestParam("pid") String pid){
+        ApiResult apiResult = new ApiResult();
+        if(StringUtils.isBlank(value) || StringUtils.isBlank(pid)){
+            apiResult.isFalse();
+            return apiResult;
+        }
+        apiResult = mainService.getComboBox(pid, value);
+        return apiResult;
+    }
+
 }

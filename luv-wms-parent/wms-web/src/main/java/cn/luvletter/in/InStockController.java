@@ -3,10 +3,8 @@ package cn.luvletter.in;
 import cn.luvletter.base.BaseController;
 import cn.luvletter.bean.ApiResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,5 +33,9 @@ public class InStockController extends BaseController {
     @GetMapping("/{id}")
     public ApiResult getDtl(@PathVariable String id,  HttpServletRequest httpServletRequest){
         return inStockService.getInDtl(id, httpServletRequest);
+    }
+    @PostMapping
+    public ApiResult uploadInStock(@RequestParam("file") MultipartFile file, HttpServletRequest httpServletRequest){
+        return inStockService.uploadInStock(file, httpServletRequest);
     }
 }

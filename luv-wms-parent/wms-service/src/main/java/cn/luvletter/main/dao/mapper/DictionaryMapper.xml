@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.luvletter.main.dao.DictionaryMapper" >
+    <resultMap id="BaseResultMap" type="cn.luvletter.main.model.Dictionary" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="rid" property="rid" jdbcType="VARCHAR" />
+        <result column="paraId" property="paraId" jdbcType="VARCHAR" />
+        <result column="text" property="text" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+        <result column="pid" property="pid" jdbcType="VARCHAR" />
+        <result column="gmtCreate" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmtModified" property="gmtModified" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <select id="selectByParaId" resultMap="BaseResultMap" parameterType="string">
+        SELECT *
+        FROM wms_base_dictionary
+        WHERE 1=1
+        <if test="pid != null">
+            AND pid = #{pid}
+        </if>
+        <if test="value != null">
+            AND para_id = #{value}
+        </if>
+    </select>
+
+</mapper>

@@ -13,9 +13,9 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.awt.*;
 import java.util.List;
 
 /**
@@ -52,6 +52,7 @@ public class InStockServiceImpl implements InStockService {
         List<InStock> inStocks = inStockMapper.selectByExample(inStockExample);
         ApiResult apiResult = new ApiResult();
         apiResult.setData(inStocks);
+        apiResult.setTotal(inStockMapper.countByExample(inStockExample));
         return apiResult;
     }
 
@@ -65,15 +66,27 @@ public class InStockServiceImpl implements InStockService {
         InStockExample inStockExample = new InStockExample();
         inStockExample.createCriteria().andIdEqualTo(Long.valueOf(id));
         List<InStock> inStocks = inStockMapper.selectByExample(inStockExample);
-        if(inStocks == null || inStocks.size()==0){
+        if(inStocks == null || inStocks.isEmpty()){
             apiResult.isFalse().setMessage("系统未找到此入库单详情");
             return apiResult;
         }
+        String start = wmsUtil.getStart(httpServletRequest);
+        String limit = wmsUtil.getLimit(httpServletRequest);
         String inStockNo = inStocks.get(0).getInStockNo();
         InStockDtlExample inStockDtlExample = new InStockDtlExample();
         inStockDtlExample.createCriteria().andInStockNoEqualTo(inStockNo);
+        inStockDtlExample.setStart(start);
+        inStockDtlExample.setLimit(limit);
         List<InStockDtl> inStockDtls = inStockDtlMapper.selectByExample(inStockDtlExample);
         apiResult.setData(inStockDtls);
+        apiResult.setTotal(inStockDtlMapper.countByExample(inStockDtlExample));
+        return apiResult;
+    }
+
+    @Override
+    public ApiResult uploadInStock(MultipartFile file, HttpServletRequest httpServletRequest) {
+        ApiResult apiResult = new ApiResult();
+
         return apiResult;
     }
 }

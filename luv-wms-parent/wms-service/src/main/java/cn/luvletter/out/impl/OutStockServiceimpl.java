@@ -60,6 +60,8 @@ public class OutStockServiceimpl implements OutStockService {
             apiResult.isFalse().setMessage("id不能为空");
             return apiResult;
         }
+        String start = wmsUtil.getStart(httpServletRequest);
+        String limit = wmsUtil.getLimit(httpServletRequest);
         OutStockExample outStockExample = new OutStockExample();
         outStockExample.createCriteria().andIdEqualTo(Long.valueOf(id));
         List<OutStock> outStocks = outStockMapper.selectByExample(outStockExample);
