@@ -2,9 +2,7 @@ package cn.luvletter.main;
 
 import cn.luvletter.base.BaseController;
 import cn.luvletter.bean.ApiResult;
-import cn.luvletter.sys.api.SysService;
 import cn.luvletter.util.WMSUtil;
-import com.sun.deploy.association.utility.AppUtility;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

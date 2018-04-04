@@ -8,7 +8,6 @@ import cn.luvletter.base.vo.GoodsSerarchVo;
 import cn.luvletter.bean.ApiResult;
 import cn.luvletter.util.DateUtil;
 import cn.luvletter.util.WMSUtil;
-import com.sun.deploy.association.utility.AppUtility;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
