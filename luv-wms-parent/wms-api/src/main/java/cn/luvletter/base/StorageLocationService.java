@@ -16,7 +16,7 @@ public interface StorageLocationService {
      * @Date: 13:11 2018/3/28
      * @param httpServletRequest
      */
-    ApiResult getStorageArea(HttpServletRequest httpServletRequest);
+    ApiResult getStorageLocation(HttpServletRequest httpServletRequest);
 
     /**
      * @Description: 根据id删除库位

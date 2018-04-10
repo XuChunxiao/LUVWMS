@@ -29,7 +29,7 @@ public class StorageLocationServiceImpl implements StorageLocationService {
     @Autowired
     private WMSUtil wmsUtil;
     @Override
-    public ApiResult getStorageArea(HttpServletRequest httpServletRequest) {
+    public ApiResult getStorageLocation(HttpServletRequest httpServletRequest) {
         final String currWNo = wmsUtil.getCurrWNo(httpServletRequest);
         final ApiResult apiResult = new ApiResult();
         String start = wmsUtil.getStart(httpServletRequest);

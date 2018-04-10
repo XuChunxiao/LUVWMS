@@ -5,6 +5,7 @@ import cn.luvletter.bean.ApiResult;
 import cn.luvletter.util.WMSUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,6 +54,21 @@ public class MainController extends BaseController {
             return apiResult;
         }
         apiResult = mainService.getComboBox(pid, value);
+        return apiResult;
+    }
+    /**
+     * @Description: 获取下拉框选项
+     * @Date: 15:07 2018/4/2
+     */
+    @GetMapping("/selectDS")
+    @ResponseBody
+    public ApiResult selectDS(@RequestParam("pid") String pid){
+        ApiResult apiResult = new ApiResult();
+        if(StringUtils.isBlank(pid)){
+            apiResult.isFalse();
+            return apiResult;
+        }
+        apiResult = mainService.getSelectDS(pid);
         return apiResult;
     }
 

@@ -22,7 +22,7 @@ public class StorageLocationController extends BaseController{
     private StorageLocationService storageLocationService;
     @GetMapping
     public ApiResult getData(HttpServletRequest httpServletRequest){
-        return storageLocationService.getStorageArea(httpServletRequest);
+        return storageLocationService.getStorageLocation(httpServletRequest);
     }
     @PutMapping
     public ApiResult update(@RequestBody StorageLocation storageLocation, HttpServletRequest httpServletRequest){

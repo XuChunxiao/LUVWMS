@@ -22,5 +22,12 @@
             AND para_id = #{value}
         </if>
     </select>
+    <select id="selectByPid" resultType="cn.luvletter.main.vo.SelectDSVo" parameterType="string">
+        SELECT text label,para_id value FROM wms_base_dictionary
+        WHERE 1=1
+        <if test="pid != null">
+            AND pid = #{pid}
+        </if>
+    </select>
 
 </mapper>

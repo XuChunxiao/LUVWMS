@@ -13,4 +13,11 @@ public interface MainService {
      * @Date: 15:07 2018/4/2
      */
     ApiResult getComboBox(String pid, String value);
+
+    /**
+     *  获取下拉框选项
+     * @param pid
+     * @return
+     */
+    ApiResult getSelectDS(String pid);
 }
