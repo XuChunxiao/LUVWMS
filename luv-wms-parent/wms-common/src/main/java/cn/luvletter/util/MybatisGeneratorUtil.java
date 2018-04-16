@@ -20,20 +20,13 @@ import java.util.regex.Pattern;
  */
 public class MybatisGeneratorUtil {
 
-	public static void main(String[] args) throws Exception {
-		String jdbc_driver="com.mysql.jdbc.Driver";
-		String jdbc_url="jdbc:mysql://localhost:3306/";
-		String jdbc_username="root";
-		String jdbc_password="123456";
+	public static void main(String[] args) throws Exception { ;
 		String module="luv-wms-parent";
 		String database="luv_wms";
-		String table_prefix="wms_base_";
-		String package_name="cn.luvletter.base";
-		String tableName="wms_base_goods";
-		generator(jdbc_driver,
-				jdbc_url,
-				jdbc_username,
-				jdbc_password,
+		String table_prefix="wms_";
+		String package_name="cn.luvletter.stock";
+		String tableName="wms_stock_dtl";
+		generator(
 				module,
 				database,
 				table_prefix,
@@ -52,20 +45,12 @@ public class MybatisGeneratorUtil {
 
 	/**
 	 * 根据模板生成generatorConfig.xml文件
-	 * @param jdbc_driver   驱动路径
-	 * @param jdbc_url      链接
-	 * @param jdbc_username 帐号
-	 * @param jdbc_password 密码
 	 * @param module        项目模块
 	 * @param database      数据库
 	 * @param table_prefix  表前缀
 	 * @param package_name  包名
 	 */
 	public static void generator(
-			String jdbc_driver,
-			String jdbc_url,
-			String jdbc_username,
-			String jdbc_password,
 			String module,
 			String database,
 			String table_prefix,
@@ -99,7 +84,7 @@ public class MybatisGeneratorUtil {
 				System.out.println(map.get("table_name"));
 				table = new HashMap<>();
 				table.put("table_name", map.get("table_name"));
-				table.put("model_name", lineToHump(ObjectUtils.toString(map.get("table_name"))).replace("WmsBase",""));
+				table.put("model_name", lineToHump(ObjectUtils.toString(map.get("table_name"))).replace("Wms",""));
 				tables.add(table);
 			}
 			jdbcUtil.release();

@@ -24,12 +24,16 @@ import java.util.*;
  * @ Description: TODO
  * @ Date 2018/2/13
  */
-@Component
+@Component("jwtUtil")
 public class JWTUtil {
    private static final String TOKEN_PREFIX = "Bearer";
    private static final String HEADER_STRING = "Authorization";
-   private static final String REDIS_TOKEN_NAME = "auth_token";
+   private static final String REDIS_TOKEN_NAME = "auth_token_";
    private static final String REDIS_TOKEN_SECRIET = "LUVLETTER";
+
+   public JWTUtil(){
+       System.out.println("实例化JWTUtil");
+   }
 
    @Autowired
    private RedisUtil redisUtil;
@@ -40,14 +44,11 @@ public class JWTUtil {
    public void addRedisRefreshToken(String account){
        String refreshToken = null;
        try {
-           refreshToken = generateToken(null, 30);
+           refreshToken = generateToken(null, 60*24);
        } catch (UnsupportedEncodingException e) {
            e.printStackTrace();
        }
-       if(redisUtil.hContainKey(REDIS_TOKEN_NAME,account)){
-           redisUtil.hRemoveByKey(REDIS_TOKEN_NAME,account);
-       }
-       redisUtil.hmSet(REDIS_TOKEN_NAME,account,refreshToken);
+       redisUtil.strSet(REDIS_TOKEN_NAME+account,refreshToken,60);
    }
    /**
     * @Description: 生成token
@@ -89,23 +90,29 @@ public class JWTUtil {
     public static String addAuthentication(HttpServletResponse response, AuthenticationBean authenticationBean) {
         String token = null;
         try {
-            token = generateToken(authenticationBean,1);
+            token = generateToken(authenticationBean,30);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        JWTUtil jwtUtil = new JWTUtil();
-        //jwtUtil.addRedisRefreshToken(authenticationBean.getAccount());
         response.addHeader(HEADER_STRING,TOKEN_PREFIX+token);
         return token;
    }
 
-   public static void refreshToken(HttpServletResponse response, AuthenticationBean authenticationBean) throws UnsupportedEncodingException {
-        addAuthentication(response,authenticationBean);
-//       String refreshToken = (String) redisUtil.hGet(REDIS_TOKEN_NAME, authenticationBean.getAccount());
-//       Date expiresAt = JWT.decode(refreshToken).getExpiresAt();
-//       if(expiresAt.compareTo(DateUtil.now())<0) {
-//           throw new InvalidTokenException("token expire!");
-//       }
+   /**
+    * @Description: 刷新token ，刷新token过期则返回false
+    * @Date: 15:28 2018/4/10
+    */
+   public boolean refreshToken(HttpServletResponse response, AuthenticationBean authenticationBean) {
+       String refreshToken = (String) redisUtil.strGet(REDIS_TOKEN_NAME+authenticationBean.getAccount());
+       if(StringUtils.isEmpty(refreshToken)){
+           return false;
+       }
+       Date expiresAt = JWT.decode(refreshToken).getExpiresAt();
+       if(expiresAt.compareTo(DateUtil.now())<0) {
+           return false;
+       }
+       addAuthentication(response,authenticationBean);
+       return true;
    }
 
    /**

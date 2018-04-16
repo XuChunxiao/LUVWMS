@@ -5,6 +5,7 @@ import cn.luvletter.filter.JwtAuthenticationTokenFilter;
 import cn.luvletter.security.handler.AjaxAccessDeniedHandler;
 import cn.luvletter.security.handler.AjaxAuthFailHandler;
 import cn.luvletter.security.handler.AjaxAuthSuccessHandler;
+import cn.luvletter.security.handler.AjaxAuthenticationEntryPoint;
 import cn.luvletter.util.PropertyUtil;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -43,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private AjaxAuthSuccessHandler ajaxAuthSuccessHandler;
 
     @Autowired
-    private AjaxAccessDeniedHandler ajaxAccessDeniedHandler;
+    private AjaxAuthenticationEntryPoint ajaxAuthenticationEntryPoint;
 
     @Autowired
     private AjaxAuthFailHandler ajaxAuthFailHandler;
@@ -94,7 +96,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll() //登录页面用户任意访问
                 .and().logout().permitAll()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().exceptionHandling().accessDeniedHandler(ajaxAccessDeniedHandler)
+                .and().exceptionHandling().authenticationEntryPoint(ajaxAuthenticationEntryPoint)
                 //关闭csrf
                 .and().csrf().disable();
         //在身份验证前添加token验证
@@ -107,8 +109,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     CustomAuthenticationFilter customAuthenticationFilter() throws Exception {
         CustomAuthenticationFilter filter = new CustomAuthenticationFilter();
-        filter.setAuthenticationSuccessHandler(new AjaxAuthSuccessHandler());
-        filter.setAuthenticationFailureHandler(new AjaxAuthFailHandler());
+        filter.setAuthenticationSuccessHandler(ajaxAuthSuccessHandler);
+        filter.setAuthenticationFailureHandler(ajaxAuthFailHandler);
         filter.setFilterProcessesUrl("/login");
 
         //这句很关键，重用WebSecurityConfigurerAdapter配置的AuthenticationManager，不然要自己组装AuthenticationManager

@@ -3,10 +3,12 @@ package cn.luvletter.util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Zephyr Ji
@@ -52,5 +54,21 @@ public class RedisUtil {
     public long hRemoveByKey(Object name, Object key){
         HashOperations ops = redisTemplate.opsForHash();
         return ops.delete(name, key);
+    }
+    /**
+     * @Description: 存储str，有效时间单位为秒
+     * @Date: 15:22 2018/4/16
+     */
+    public void strSet(Object key, Object value, long validTime){
+        ValueOperations ops = redisTemplate.opsForValue();
+        ops.set(key,value,validTime, TimeUnit.SECONDS);
+    }
+    /**
+     * @Description: 根据key拿到str
+     * @Date: 15:28 2018/4/16
+     */
+    public Object strGet(Object key){
+        ValueOperations ops = redisTemplate.opsForValue();
+        return ops.get(key);
     }
 }

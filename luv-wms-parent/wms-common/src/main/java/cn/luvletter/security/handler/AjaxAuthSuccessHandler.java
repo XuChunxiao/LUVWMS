@@ -28,6 +28,13 @@ import java.io.UnsupportedEncodingException;
 @Component
 public class AjaxAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
+    @Autowired
+    private JWTUtil jwtUtil;
+
+    public AjaxAuthSuccessHandler(){
+        System.out.println("实例化AjaxAuthSuccessHandler");
+    }
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         response.setStatus(HttpServletResponse.SC_OK);
@@ -39,8 +46,9 @@ public class AjaxAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandle
         }
         authenticationBean.setRoleNo(JWTUtil.authenticationToString(authentication.getAuthorities()));
         String token = null;
-
-
+        //redis添加refreshToken
+        jwtUtil.addRedisRefreshToken(authenticationBean.getAccount());
+        //header添加accessToken
         token = JWTUtil.addAuthentication(response,authenticationBean);
         ApiResult apiResult = new ApiResult();
         apiResult.setMessage("登陆成功");

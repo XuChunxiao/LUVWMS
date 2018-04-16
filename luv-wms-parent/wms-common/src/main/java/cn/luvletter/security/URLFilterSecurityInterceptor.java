@@ -20,7 +20,8 @@ import java.io.IOException;
 @Component
 public class URLFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter{
 
-    private FilterInvocationSecurityMetadataSource securityMetadataSource = new URLInvocationSecurityMetadataSourceService();
+    @Autowired
+    private FilterInvocationSecurityMetadataSource securityMetadataSource;
 
     @Autowired
     public void setMyAccessDecisionManager(MyAccessDecisionManager myAccessDecisionManager) {

@@ -6,8 +6,9 @@ import cn.luvletter.exception.InvalidTokenException;
 import cn.luvletter.security.service.OprtService;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.JdbcUtil;
-import com.auth0.jwt.interfaces.DecodedJWT;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -27,20 +28,25 @@ import java.util.*;
 
 /**
  * @author Zephyr Ji
- * @ Description: TODO
+ * @ Description: jwt拦截器 （1、从header中拿到token。2、检验token，如果过期，则通过refreshToken重新获取token)
  * @ Date 2018/2/13
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
+    private Logger log = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
 
+    @Autowired
+    private JWTUtil jwtUtil;
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest,
                                     HttpServletResponse httpServletResponse,
                                     FilterChain filterChain) throws ServletException, IOException {
+        //从header中拿到token
         final String token = JWTUtil.getToken(httpServletRequest);
         if(StringUtils.isNotEmpty(token)) {
             String username = JWTUtil.getUsernameFromToken(token);
             if (username != null) {
+                //根据token中的账户获取用户信息
                 AuthenticationBean authenticationBean = OprtService.loadOprt(username);
                 if(authenticationBean == null){
                     throw new ApplicationException("username:"+username+"not found");
@@ -50,12 +56,12 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                 try {
                     isValid = JWTUtil.validateToken(token, password);
                 }catch (InvalidTokenException e){
-                    //token失效，重新生成token
-                    JWTUtil.refreshToken(httpServletResponse,authenticationBean);
-                    isValid = true;
+                    //token失效，重新生成token,如果refreshToken过期，则认证失败
+                    isValid = jwtUtil.refreshToken(httpServletResponse,authenticationBean);
                 }
 
                 if (isValid) {
+                    log.debug("username:"+username+"token 验证成功！");
                     UsernamePasswordAuthenticationToken authentication = null;
                     try {
                         authentication = new UsernamePasswordAuthenticationToken(username, password, getAuthentication(username));
