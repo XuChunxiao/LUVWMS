@@ -21,7 +21,7 @@ import java.io.IOException;
 public class AjaxAuthenticationEntryPoint implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
-        httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        httpServletResponse.setStatus(HttpServletResponse.SC_OK);
 
         ApiResult apiResult = new ApiResult().isFalse();
         String msg = e.getMessage();

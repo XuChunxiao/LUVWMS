@@ -24,7 +24,7 @@ public class MainServiceImpl implements MainService {
     public ApiResult getComboBox(String pid,String value) {
         ApiResult apiResult = new ApiResult();
         List<Dictionary> dictionaries = dictionaryMapper.selectByParaId(pid, value);
-        if(dictionaries == null){
+        if(dictionaries == null || dictionaries.isEmpty()){
             apiResult.isFalse();
             return apiResult;
         }
@@ -35,12 +35,12 @@ public class MainServiceImpl implements MainService {
     @Override
     public ApiResult getSelectDS(String pid) {
         ApiResult apiResult = new ApiResult();
-        List<SelectDSVo> SelectDSVos = dictionaryMapper.selectByPid(pid);
-        if(SelectDSVos == null){
+        List<SelectDSVo> selectDSVos = dictionaryMapper.selectByPid(pid);
+        if(selectDSVos == null || selectDSVos.isEmpty()){
             apiResult.isFalse();
             return apiResult;
         }
-        apiResult.setData(SelectDSVos);
+        apiResult.setData(selectDSVos);
         return apiResult;
     }
 }

@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @ Date 2018/2/9
  */
 @Controller
-@RequestMapping("/")
-public class MainController extends BaseController {
+@RequestMapping("/common")
+public class CommonController extends BaseController {
     @Autowired
     private WMSUtil wmsUtil;
     @Autowired

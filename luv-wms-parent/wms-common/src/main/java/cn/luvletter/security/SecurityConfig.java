@@ -86,6 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .authorizeRequests()
                 .antMatchers("/auth").permitAll()
+                .antMatchers("/common/**").permitAll()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and().formLogin()
                 .loginPage("/")

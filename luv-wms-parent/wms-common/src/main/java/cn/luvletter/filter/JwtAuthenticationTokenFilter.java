@@ -64,7 +64,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                 }
 
                 if (isValid) {
-                    log.debug("username:"+username+"token 验证成功！");
+                    log.debug("username:"+username+" token 验证成功！");
                     UsernamePasswordAuthenticationToken authentication = null;
                     try {
                         authentication = new UsernamePasswordAuthenticationToken(username, password, getAuthentication(username));

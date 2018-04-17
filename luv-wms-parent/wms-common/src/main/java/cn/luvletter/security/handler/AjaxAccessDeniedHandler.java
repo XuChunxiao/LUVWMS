@@ -20,7 +20,7 @@ import java.io.IOException;
 public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
-        httpServletResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        httpServletResponse.setStatus(HttpServletResponse.SC_OK);
 
         ApiResult apiResult = new ApiResult().isFalse();
         apiResult.setMessage(e.getMessage());
