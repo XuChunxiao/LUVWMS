@@ -6,6 +6,8 @@ import cn.luvletter.exception.InvalidTokenException;
 import cn.luvletter.security.service.OprtService;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.JdbcUtil;
+import cn.luvletter.util.WMSUtil;
+import com.sun.org.apache.regexp.internal.RE;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,9 +54,10 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                     throw new ApplicationException("username:"+username+"not found");
                 }
                 String password = authenticationBean.getPassword();
+                String ipAddr = WMSUtil.getIpAddr(httpServletRequest);
                 boolean isValid = true;
                 try {
-                    isValid = JWTUtil.validateToken(token, password);
+                    isValid = JWTUtil.validateToken(token, password,ipAddr);
                 }catch (InvalidTokenException e){
                     //token失效，重新生成token,如果refreshToken过期，则认证失败
                     isValid = jwtUtil.refreshToken(httpServletResponse,authenticationBean);

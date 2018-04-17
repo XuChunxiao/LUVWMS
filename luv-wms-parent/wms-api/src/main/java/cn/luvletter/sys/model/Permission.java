@@ -15,6 +15,15 @@ public class Permission {
     private String permissionDesc;
     private String permissionUrl;
     private String permissionPid;
+    private String isLeaf;
+
+    public String getIsLeaf() {
+        return isLeaf;
+    }
+
+    public void setIsLeaf(String isLeaf) {
+        this.isLeaf = isLeaf;
+    }
 
     public int getId() {
         return id;

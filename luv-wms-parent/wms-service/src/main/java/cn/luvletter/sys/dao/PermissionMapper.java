@@ -22,4 +22,5 @@ public interface PermissionMapper {
 
     int delById(@Param("id") String id);
 
+    List<Permission> findByPid(@Param("key") String key);
 }

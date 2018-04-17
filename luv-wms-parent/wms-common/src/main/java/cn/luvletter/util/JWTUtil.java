@@ -31,9 +31,6 @@ public class JWTUtil {
    private static final String REDIS_TOKEN_NAME = "auth_token_";
    private static final String REDIS_TOKEN_SECRIET = "LUVLETTER";
 
-   public JWTUtil(){
-       System.out.println("实例化JWTUtil");
-   }
 
    @Autowired
    private RedisUtil redisUtil;
@@ -48,7 +45,7 @@ public class JWTUtil {
        } catch (UnsupportedEncodingException e) {
            e.printStackTrace();
        }
-       redisUtil.strSet(REDIS_TOKEN_NAME+account,refreshToken,60);
+       redisUtil.strSet(REDIS_TOKEN_NAME+account,refreshToken,60*10);
    }
    /**
     * @Description: 生成token
@@ -73,7 +70,7 @@ public class JWTUtil {
                    .withClaim("role","role_"+authenticationBean.getRoleNo())
                    .withExpiresAt(expiresDate)//过期时间，大于签发时间
                    .withIssuedAt(iatDate)//签发时间
-                   .sign(Algorithm.HMAC256(authenticationBean.getPassword()));
+                   .sign(Algorithm.HMAC256(authenticationBean.getPassword()+authenticationBean.getIdAddr()));
        }else{
            token = JWT.create()
                    .withHeader(map)//header
@@ -131,13 +128,13 @@ public class JWTUtil {
     * @Description: 检验token是否有效
     * @Date: 22:27 2018/2/24
     */
-   public static boolean validateToken(String token,String secret) throws UnsupportedEncodingException {
+   public static boolean validateToken(String token, String secret, String ipAddr) throws UnsupportedEncodingException {
        if(token != null){
-           Date expiresAt = JWT.decode(token).getExpiresAt();
-           if(expiresAt.compareTo(DateUtil.now())<0) {
-               throw new InvalidTokenException("token expire!");
-           }
-           JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(secret)).build();
+//           Date expiresAt = JWT.decode(token).getExpiresAt();
+//           if(expiresAt.compareTo(DateUtil.now())<0) {
+//               throw new InvalidTokenException("token expire!");
+//           }
+           JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(secret+ipAddr)).build();
            try{
                jwtVerifier.verify(token);
            }catch (Exception e){

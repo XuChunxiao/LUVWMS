@@ -9,8 +9,17 @@ public class AuthenticationBean {
     private String account;
     private String password;
     private String roleNo;
+    private String idAddr;
     private boolean checkbox;
 
+
+    public String getIdAddr() {
+        return idAddr;
+    }
+
+    public void setIdAddr(String idAddr) {
+        this.idAddr = idAddr;
+    }
 
     public String getAccount() {
         return account;

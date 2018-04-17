@@ -6,6 +6,7 @@ import cn.luvletter.exception.ApplicationException;
 import cn.luvletter.security.service.OprtService;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.ResponseUtil;
+import cn.luvletter.util.WMSUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -31,10 +32,6 @@ public class AjaxAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandle
     @Autowired
     private JWTUtil jwtUtil;
 
-    public AjaxAuthSuccessHandler(){
-        System.out.println("实例化AjaxAuthSuccessHandler");
-    }
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         response.setStatus(HttpServletResponse.SC_OK);
@@ -45,11 +42,11 @@ public class AjaxAuthSuccessHandler extends SimpleUrlAuthenticationSuccessHandle
             throw new ApplicationException("username:"+username+"not found");
         }
         authenticationBean.setRoleNo(JWTUtil.authenticationToString(authentication.getAuthorities()));
-        String token = null;
+        authenticationBean.setIdAddr(WMSUtil.getIpAddr(request));
         //redis添加refreshToken
         jwtUtil.addRedisRefreshToken(authenticationBean.getAccount());
         //header添加accessToken
-        token = JWTUtil.addAuthentication(response,authenticationBean);
+        String token = JWTUtil.addAuthentication(response,authenticationBean);
         ApiResult apiResult = new ApiResult();
         apiResult.setMessage("登陆成功");
         apiResult.setData(token);
