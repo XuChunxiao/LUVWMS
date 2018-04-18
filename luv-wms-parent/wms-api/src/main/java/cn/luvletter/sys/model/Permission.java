@@ -11,11 +11,20 @@ public class Permission {
      */
     private int id;
     private String permissionNo;
-    private String permissioName;
+    private String permissionName;
     private String permissionDesc;
     private String permissionUrl;
     private String permissionPid;
     private String isLeaf;
+    private String check;
+
+    public String getCheck() {
+        return check;
+    }
+
+    public void setCheck(String check) {
+        this.check = check;
+    }
 
     public String getIsLeaf() {
         return isLeaf;
@@ -41,12 +50,12 @@ public class Permission {
         this.permissionNo = permissionNo;
     }
 
-    public String getPermissioName() {
-        return permissioName;
+    public String getPermissionName() {
+        return permissionName;
     }
 
-    public void setPermissioName(String permissioName) {
-        this.permissioName = permissioName;
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
     }
 
     public String getPermissionDesc() {

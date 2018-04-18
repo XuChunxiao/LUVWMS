@@ -4,6 +4,7 @@ import cn.luvletter.bean.ApiResult;
 import cn.luvletter.sys.api.PermissionService;
 import cn.luvletter.sys.dao.PermissionMapper;
 import cn.luvletter.sys.model.Permission;
+import cn.luvletter.sys.model.PermissionTree;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,21 @@ public class PermisssionServiceImpl implements PermissionService {
         if(StringUtils.isEmpty(key)){
             return apiResult;
         }
-        List<Permission> permissions = permissionMapper.findByPid(key);
-        apiResult.setData(permissions);
+        List<PermissionTree> permissionTrees = permissionMapper.findTree();
+        if(permissionTrees == null ||permissionTrees.isEmpty()){
+            return apiResult;
+        }
+        for(PermissionTree permissionTree : permissionTrees){
+            List<Permission> permissionChild = permissionTree.getPermissionChild();
+            for(Permission permission : permissionChild){
+                if(permissionMapper.decideIsRole(permission.getPermissionNo(),key)>0){
+                    permission.setCheck("1");
+                }else{
+                    permission.setCheck("0");
+                }
+            }
+        }
+        apiResult.setData(permissionTrees);
         return apiResult;
     }
 }

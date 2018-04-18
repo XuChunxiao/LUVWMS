@@ -1,6 +1,7 @@
 package cn.luvletter.sys.dao;
 
 import cn.luvletter.sys.model.Permission;
+import cn.luvletter.sys.model.PermissionTree;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import java.util.List;
  * @ Description: TODO
  * @ Date 2018/2/10
  */
-@Component
+@Repository
 public interface PermissionMapper {
 
     List<Permission> findAll();
@@ -22,5 +23,9 @@ public interface PermissionMapper {
 
     int delById(@Param("id") String id);
 
+    List<PermissionTree> findTree();
+
     List<Permission> findByPid(@Param("key") String key);
+
+    int decideIsRole(@Param("permissionNo")String permissionNo,@Param("key") String key);
 }

@@ -4,11 +4,16 @@
     <resultMap id="BaseResultMap" type="cn.luvletter.sys.model.Permission" >
         <id column="ID" property="id" jdbcType="INTEGER" />
         <result column="permission_no" property="permissionNo" jdbcType="VARCHAR" />
-        <result column="permission_name" property="permissioName" jdbcType="VARCHAR" />
+        <result column="permission_name" property="permissionName" jdbcType="VARCHAR" />
         <result column="permission_desc" property="permissionDesc" jdbcType="VARCHAR" />
         <result column="permission_url" property="permissionUrl" jdbcType="VARCHAR" />
         <result column="permission_pid" property="permissionPid" jdbcType="INTEGER" />
+        <result column="role_no" property="roleNo" jdbcType="VARCHAR"/>
         <result column="is_leaf" property="isLeaf" jdbcType="VARCHAR" />
+    </resultMap>
+    <resultMap id="TreeResultMap" type="cn.luvletter.sys.model.PermissionTree" extends="BaseResultMap">
+        <collection property="permissionChild" ofType="cn.luvletter.sys.model.Permission"
+                    column="permission_no" select="findByPid"></collection>
     </resultMap>
     <delete id="delById" parameterType="string">
         DELETE FROM sys_permission
@@ -28,11 +33,21 @@
         LEFT JOIN sys_permission sp on sp.permission_no =srp.permission_no
         where u.no=#{no}
     </select>
+    <select id="findTree" resultMap="TreeResultMap">
+        SELECT * FROM sys_permission WHERE 1=1
+        AND permission_pid=0
+    </select>
     <select id="findByPid" resultMap="BaseResultMap" parameterType="string">
-        SELECT * FROM sys_permission
-        WHERE 1=1
-        <if test=" key != null">
-            and permission_pid=#{key}
+        SELECT * FROM sys_permission WHERE 1=1
+        AND permission_pid=#{key}
+    </select>
+    <select id="decideIsRole" resultType="java.lang.Integer" parameterType="string">
+        SELECT count(*) FROM sys_role_permission WHERE 1=1
+        <if test="permissionNo!=null">
+            AND permission_no = #{permissionNo}
+        </if>
+        <if test="key!=null">
+            AND role_no = #{key}
         </if>
     </select>
 </mapper>
