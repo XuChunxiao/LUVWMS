@@ -34,4 +34,6 @@ public interface GoodsService {
      * @Date: 14:15 2018/3/28
      */
     ApiResult sava(Goods goods, HttpServletRequest httpServletRequest);
+
+    String genDn(String warehouse, String companyNo);
 }

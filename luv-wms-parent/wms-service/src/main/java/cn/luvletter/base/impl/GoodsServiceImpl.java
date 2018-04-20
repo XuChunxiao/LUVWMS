@@ -125,4 +125,20 @@ public class GoodsServiceImpl implements GoodsService{
 
         return apiResult;
     }
+
+    public  static Long RID_COUNT = null;
+
+    @Override
+    public synchronized String genDn(String warehouse, String companyNo){
+        if (RID_COUNT == null){
+            try {
+                RID_COUNT = goodsMapper.getMaxId();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+        }
+        RID_COUNT ++;
+        return warehouse + companyNo +  RID_COUNT;
+    }
 }

@@ -14,6 +14,19 @@
     <result column="OPRT_NAME" property="oprtName" jdbcType="VARCHAR" />
     <result column="OPRT_TIME" property="oprtTime" jdbcType="TIMESTAMP" />
   </resultMap>
+  <resultMap id="OperatorJoinRoleMap" type="cn.luvletter.sys.vo.OperatorVo">
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="NO" property="no" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="DECIMAL" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="DECIMAL" />
+    <result column="OPRT_NO" property="oprtNo" jdbcType="DECIMAL" />
+    <result column="OPRT_NAME" property="oprtName" jdbcType="VARCHAR" />
+    <result column="OPRT_TIME" property="oprtTime" jdbcType="TIMESTAMP" />
+    <collection property="roleList" ofType="string" column="NO" select="selectByNo"></collection>
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -88,6 +101,13 @@
     <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
+    <if test=" start != null and limit !=0">
+      limit ${start},${limit}
+    </if>
+  </select>
+  <select id="selectByNo" resultType="string" parameterType="string">
+    SELECT role_no FROM sys_oprt_role WHERE 1=1
+      and oprt_no=#{_parameter}
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -192,6 +212,12 @@
     select count(*) from sys_operator
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <select id="selectByExampleAndJoinRole" resultMap="OperatorJoinRoleMap" parameterType="cn.luvletter.sys.model.OperatorExample">
+    SELECT * from sys_operator
+    <if test=" start != null and limit !=0">
+      limit ${start},${limit}
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >

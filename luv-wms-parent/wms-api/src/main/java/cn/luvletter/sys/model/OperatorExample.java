@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 public class OperatorExample implements Serializable {
+    private String start;
+    private String limit;
+
     protected String orderByClause;
 
     protected boolean distinct;
@@ -13,6 +16,22 @@ public class OperatorExample implements Serializable {
     protected List<Criteria> oredCriteria;
 
     private static final long serialVersionUID = 1L;
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
 
     public OperatorExample() {
         oredCriteria = new ArrayList<Criteria>();

@@ -3,6 +3,8 @@ package cn.luvletter.sys.dao;
 import cn.luvletter.sys.model.Operator;
 import cn.luvletter.sys.model.OperatorExample;
 import java.util.List;
+
+import cn.luvletter.sys.vo.OperatorVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -29,4 +31,8 @@ public interface OperatorMapper {
     int updateByPrimaryKeySelective(Operator record);
 
     int updateByPrimaryKey(Operator record);
+
+    List<OperatorVo> selectByExampleAndJoinRole(OperatorExample operatorExample);
+
+    List<String> selectByNo(String no);
 }
