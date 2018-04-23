@@ -15,6 +15,7 @@ public class Permission {
     private String permissionDesc;
     private String permissionUrl;
     private String permissionPid;
+    private String permissionIcon;
     private String isLeaf;
     private String check;
 
@@ -72,6 +73,14 @@ public class Permission {
 
     public void setPermissionUrl(String permissionUrl) {
         this.permissionUrl = permissionUrl;
+    }
+
+    public String getPermissionIcon() {
+        return permissionIcon;
+    }
+
+    public void setPermissionIcon(String permissionIcon) {
+        this.permissionIcon = permissionIcon;
     }
 
     public String getPermissionPid() {

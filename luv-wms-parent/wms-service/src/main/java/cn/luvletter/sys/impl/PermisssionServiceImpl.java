@@ -1,6 +1,7 @@
 package cn.luvletter.sys.impl;
 
 import cn.luvletter.bean.ApiResult;
+import cn.luvletter.constant.WMSConstant;
 import cn.luvletter.sys.api.PermissionService;
 import cn.luvletter.sys.dao.PermissionMapper;
 import cn.luvletter.sys.model.Permission;
@@ -32,11 +33,16 @@ public class PermisssionServiceImpl implements PermissionService {
         }
         for(PermissionTree permissionTree : permissionTrees){
             List<Permission> permissionChild = permissionTree.getPermissionChild();
+            if(permissionMapper.decideIsRole(permissionTree.getPermissionNo(),key)>0){
+                permissionTree.setCheck(WMSConstant.YES);
+            }else{
+                permissionTree.setCheck(WMSConstant.NO);
+            }
             for(Permission permission : permissionChild){
                 if(permissionMapper.decideIsRole(permission.getPermissionNo(),key)>0){
-                    permission.setCheck("1");
+                    permission.setCheck(WMSConstant.YES);
                 }else{
-                    permission.setCheck("0");
+                    permission.setCheck(WMSConstant.NO);
                 }
             }
         }

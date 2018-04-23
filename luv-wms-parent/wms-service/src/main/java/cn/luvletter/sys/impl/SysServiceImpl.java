@@ -3,12 +3,14 @@ package cn.luvletter.sys.impl;
 import cn.luvletter.bean.ApiResult;
 import cn.luvletter.bean.AuthenticationBean;
 import cn.luvletter.constant.SqlConstant;
+import cn.luvletter.constant.WMSConstant;
+import cn.luvletter.sys.api.PermissionService;
 import cn.luvletter.sys.api.SysService;
 import cn.luvletter.sys.dao.OperatorMapper;
 import cn.luvletter.sys.dao.OprtRoleMapper;
-import cn.luvletter.sys.model.Operator;
-import cn.luvletter.sys.model.OperatorExample;
-import cn.luvletter.sys.model.OprtRole;
+import cn.luvletter.sys.dao.PermissionMapper;
+import cn.luvletter.sys.model.*;
+import cn.luvletter.sys.vo.NavigationVo;
 import cn.luvletter.util.AESUtil;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.JdbcUtil;
@@ -21,6 +23,7 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,6 +40,8 @@ public class SysServiceImpl implements SysService {
     private OperatorMapper operatorMapper;
     @Autowired
     private OprtRoleMapper oprtRoleMapper;
+    @Autowired
+    private PermissionService permissionService;
     @Override
     public ApiResult register(Operator operator) {
         final String no = operator.getNo();
@@ -88,6 +93,39 @@ public class SysServiceImpl implements SysService {
     public ApiResult getAuth() {
         ApiResult apiResult = new ApiResult();
         apiResult.setData(JdbcUtil.newInstance().selectByParams(SqlConstant.SELECT_ALL_AUTH,null));
+        return apiResult;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public ApiResult getNav(String operatorNo) {
+        ApiResult apiResult = new ApiResult();
+        List<NavigationVo> navigationVos = new ArrayList<>();
+        List<PermissionTree> permissionTrees= (List<PermissionTree>) this.permissionService.getPermission(operatorNo).getData();
+        for(PermissionTree permissionTree : permissionTrees){
+            NavigationVo navigationVo = new NavigationVo();
+            if(WMSConstant.YES.equals(permissionTree.getCheck())){
+                navigationVo.setText(permissionTree.getPermissionName());
+                navigationVo.setTo(permissionTree.getPermissionUrl());
+                navigationVo.setIcon(permissionTree.getPermissionIcon());
+            }else{
+                continue;
+            }
+            List<Permission> permissionChild = permissionTree.getPermissionChild();
+            List<NavigationVo> childrens = new ArrayList<>();
+            for(Permission permission : permissionChild){
+                if(WMSConstant.YES.equals(permission.getCheck())){
+                    NavigationVo children = new NavigationVo();
+                    children.setText(permission.getPermissionName());
+                    children.setIcon(permission.getPermissionIcon());
+                    children.setTo(permission.getPermissionUrl());
+                    childrens.add(children);
+                }
+            }
+            navigationVo.setChildren(childrens);
+            navigationVos.add(navigationVo);
+        }
+        apiResult.setData(navigationVos);
         return apiResult;
     }
 }

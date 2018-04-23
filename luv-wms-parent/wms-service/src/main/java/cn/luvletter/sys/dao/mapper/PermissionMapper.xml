@@ -7,8 +7,8 @@
         <result column="permission_name" property="permissionName" jdbcType="VARCHAR" />
         <result column="permission_desc" property="permissionDesc" jdbcType="VARCHAR" />
         <result column="permission_url" property="permissionUrl" jdbcType="VARCHAR" />
+        <result column="permission_icon" property="permissionIcon" jdbcType="VARCHAR" />
         <result column="permission_pid" property="permissionPid" jdbcType="INTEGER" />
-        <result column="role_no" property="roleNo" jdbcType="VARCHAR"/>
         <result column="is_leaf" property="isLeaf" jdbcType="VARCHAR" />
     </resultMap>
     <resultMap id="TreeResultMap" type="cn.luvletter.sys.model.PermissionTree" extends="BaseResultMap">

@@ -4,13 +4,99 @@
     <resultMap id="BaseResultMap" type="cn.luvletter.main.model.Dictionary" >
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="rid" property="rid" jdbcType="VARCHAR" />
-        <result column="paraId" property="paraId" jdbcType="VARCHAR" />
+        <result column="para_id" property="paraId" jdbcType="VARCHAR" />
         <result column="text" property="text" jdbcType="VARCHAR" />
         <result column="remark" property="remark" jdbcType="VARCHAR" />
         <result column="pid" property="pid" jdbcType="VARCHAR" />
-        <result column="gmtCreate" property="gmtCreate" jdbcType="TIMESTAMP" />
-        <result column="gmtModified" property="gmtModified" jdbcType="TIMESTAMP" />
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
     </resultMap>
+    <insert id="insertSelective" parameterType="cn.luvletter.main.model.Dictionary" >
+        insert into wms_base_dictionary
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="rid != null" >
+                rid,
+            </if>
+            <if test="paraId != null" >
+                para_id,
+            </if>
+            <if test="text != null" >
+                text,
+            </if>
+            <if test="remark != null" >
+                remark,
+            </if>
+            <if test="pid != null" >
+                pid,
+            </if>
+            <if test="gmtCreate != null" >
+                gmt_create,
+            </if>
+            <if test="gmtModified != null" >
+                gmt_modified,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="rid != null" >
+                #{rid,jdbcType=VARCHAR},
+            </if>
+            <if test="paraId != null" >
+                #{paraId,jdbcType=VARCHAR},
+            </if>
+            <if test="text != null" >
+                #{text,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null" >
+                #{remark,jdbcType=CHAR},
+            </if>
+            <if test="pid != null" >
+                #{pid,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtCreate != null" >
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null" >
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective">
+        update wms_base_dictionary
+        <set >
+            <if test="rid != null" >
+                rid = #{rid,jdbcType=VARCHAR},
+            </if>
+            <if test="paraId != null" >
+                para_id = #{paraId,jdbcType=VARCHAR},
+            </if>
+            <if test="text != null" >
+                text = #{text,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null" >
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null" >
+                pid = #{pid,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null" >
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null" >
+                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from wms_base_dictionary
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
     <select id="selectByParaId" resultMap="BaseResultMap" parameterType="string">
         SELECT *
         FROM wms_base_dictionary
@@ -28,6 +114,18 @@
         <if test="pid != null">
             AND pid = #{pid}
         </if>
+    </select>
+    <select id="selectDictionaryByPid" resultMap="BaseResultMap" parameterType="string">
+        SELECT * FROM wms_base_dictionary
+        WHERE 1=1
+        <if test="pid != null">
+            AND pid = #{pid}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultType="cn.luvletter.main.model.Dictionary" parameterType="java.lang.Long">
+    SELECT *
+        from wms_base_dictionary
+        where id = #{id,jdbcType=BIGINT}
     </select>
 
 </mapper>

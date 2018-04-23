@@ -12,6 +12,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -130,14 +131,11 @@ public class GoodsServiceImpl implements GoodsService{
 
     @Override
     public synchronized String genDn(String warehouse, String companyNo){
-        if (RID_COUNT == null){
             try {
                 RID_COUNT = goodsMapper.getMaxId();
             }catch (Exception e){
                 e.printStackTrace();
             }
-
-        }
         RID_COUNT ++;
         return warehouse + companyNo +  RID_COUNT;
     }

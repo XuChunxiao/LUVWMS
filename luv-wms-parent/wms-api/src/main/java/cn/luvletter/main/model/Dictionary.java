@@ -8,7 +8,7 @@ import java.util.Date;
  * @Date 2018/4/2
  */
 public class Dictionary {
-    private Integer id;
+    private Long id;
     private String rid;
     private String paraId;
     private String text;
@@ -17,11 +17,11 @@ public class Dictionary {
     private Date gmtCreate;
     private Date gmtModified;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

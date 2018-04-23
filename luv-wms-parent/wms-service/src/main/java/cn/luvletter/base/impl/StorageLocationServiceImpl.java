@@ -77,7 +77,6 @@ public class StorageLocationServiceImpl implements StorageLocationService {
         if(id == null || id == 0){
             apiResult.isFalse().setMessage("id不能为空");
             return apiResult;
-
         }
         storageLocation.setGmtModified(DateUtil.now());
         storageLocationMapper.updateByPrimaryKeySelective(storageLocation);

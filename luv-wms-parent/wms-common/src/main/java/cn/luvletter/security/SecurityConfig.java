@@ -7,7 +7,6 @@ import cn.luvletter.security.handler.AjaxAuthFailHandler;
 import cn.luvletter.security.handler.AjaxAuthSuccessHandler;
 import cn.luvletter.security.handler.AjaxAuthenticationEntryPoint;
 import cn.luvletter.util.PropertyUtil;
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -50,15 +49,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AjaxAuthFailHandler ajaxAuthFailHandler;
 
-    private static BasicDataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 
-    static {
-        dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(PropertyUtil.getProperty("driver"));
-        dataSource.setUrl(PropertyUtil.getProperty("url"));
-        dataSource.setUsername(PropertyUtil.getProperty("username"));
-        dataSource.setPassword(PropertyUtil.getProperty("password"));
-    }
+//    static {
+//        dataSource = DataSourceUtils.
+//        dataSource = new BasicDataSource();
+//        dataSource.setDriverClassName(PropertyUtil.getProperty("driver"));
+//        dataSource.setUrl(PropertyUtil.getProperty("url"));
+//        dataSource.setUsername(PropertyUtil.getProperty("username"));
+//        dataSource.setPassword(PropertyUtil.getProperty("password"));
+//    }
 
     /**
      * @Description:    以jdbc形式获取用户角色和权限

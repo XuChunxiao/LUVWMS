@@ -16,5 +16,5 @@ public interface SysService {
     ApiResult login(AuthenticationBean authenticationBean, HttpServletResponse response);
     String refresh(String oldToken);
     ApiResult getAuth();
-
+    ApiResult getNav(String operatorNo);
 }

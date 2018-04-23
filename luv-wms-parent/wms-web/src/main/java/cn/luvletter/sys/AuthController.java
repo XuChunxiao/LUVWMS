@@ -36,4 +36,9 @@ public class AuthController extends BaseController {
         return sysService.getAuth();
     }
 
+    @GetMapping("/nav")
+    public ApiResult getNav(@RequestParam("operatorNo") String operatorNo){
+        return sysService.getNav(operatorNo);
+    }
+
 }
