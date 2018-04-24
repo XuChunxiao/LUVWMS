@@ -20,11 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 public class GoodsController extends BaseController {
     @Autowired
     private GoodsService goodsService;
-    @GetMapping
+    @GetMapping("/list")
     public ApiResult getData(GoodsSerarchVo serarchVo, HttpServletRequest httpServletRequest){
         return goodsService.getGoods(serarchVo,httpServletRequest);
     }
-    @PutMapping
+    @PutMapping("/list")
     public ApiResult update(@Validated @RequestBody Goods goods, BindingResult br, HttpServletRequest httpServletRequest){
         ApiResult apiResult = new ApiResult();
         if(br.hasErrors()){
@@ -33,11 +33,11 @@ public class GoodsController extends BaseController {
         }
         return goodsService.update(goods, httpServletRequest);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/list/{id}")
     public ApiResult delById(@PathVariable("id")String id, HttpServletRequest httpServletRequest){
         return goodsService.delById(id,httpServletRequest);
     }
-    @PostMapping
+    @PostMapping("/create")
     public ApiResult save(@Validated @RequestBody Goods goods, BindingResult br, HttpServletRequest httpServletRequest){
         ApiResult apiResult = new ApiResult();
         if(br.hasErrors()){

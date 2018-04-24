@@ -47,9 +47,9 @@
 
         <!-- 数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/luv_wms"
+                        connectionURL="jdbc:mysql://115.159.52.86:3306/luv_wms"
                         userId="root"
-                        password="123456" />
+                        password="741123" />
 
         <!-- model生成 -->
         <javaModelGenerator targetPackage="${generator_javaModelGenerator_targetPackage}" targetProject="${targetProject}/src/main/java" />

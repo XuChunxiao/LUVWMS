@@ -22,7 +22,7 @@ public class InStockController extends BaseController {
      * @Description: 获取入库单列表
      * @Date: 11:14 2018/3/29
      */
-    @GetMapping
+    @GetMapping("/list")
     public ApiResult getData(HttpServletRequest httpServletRequest){
         return inStockService.getInStock(httpServletRequest);
     }
@@ -30,11 +30,11 @@ public class InStockController extends BaseController {
      * @Description: 根据id获取入库单明细
      * @Date: 11:14 2018/3/29
      */
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     public ApiResult getDtl(@PathVariable String id,  HttpServletRequest httpServletRequest){
         return inStockService.getInDtl(id, httpServletRequest);
     }
-    @PostMapping
+    @PostMapping("/list")
     public ApiResult uploadInStock(@RequestParam("file") MultipartFile file, HttpServletRequest httpServletRequest){
         return inStockService.uploadInStock(file, httpServletRequest);
     }

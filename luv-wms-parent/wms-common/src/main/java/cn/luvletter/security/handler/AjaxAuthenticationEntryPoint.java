@@ -26,7 +26,7 @@ public class AjaxAuthenticationEntryPoint implements AuthenticationEntryPoint {
         ApiResult apiResult = new ApiResult().isFalse();
         String msg = e.getMessage();
         if(e instanceof InsufficientAuthenticationException){
-            msg = "权限不足！";
+            msg = "认证失败！";
         }
         apiResult.setMessage(msg);
 

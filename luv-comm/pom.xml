@@ -20,6 +20,8 @@
         <mybatis.version>3.2.8</mybatis.version>
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
         <mybatis-generator.version>1.3.2</mybatis-generator.version>
+        <!--druid.version-->
+        <druid.version>1.0.29</druid.version>
         <!-- log4j日志文件管理版本 -->
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
@@ -151,9 +153,9 @@
             <version>${mybatis-generator.version}</version>
         </dependency>
         <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>${dbcp.version}</version>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
         </dependency>
         <!--数据库连接-->
         <dependency>

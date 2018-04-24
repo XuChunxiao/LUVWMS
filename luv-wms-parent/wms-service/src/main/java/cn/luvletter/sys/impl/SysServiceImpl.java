@@ -14,6 +14,8 @@ import cn.luvletter.sys.vo.NavigationVo;
 import cn.luvletter.util.AESUtil;
 import cn.luvletter.util.JWTUtil;
 import cn.luvletter.util.JdbcUtil;
+import cn.luvletter.util.WMSUtil;
+import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -100,8 +102,12 @@ public class SysServiceImpl implements SysService {
     @SuppressWarnings("unchecked")
     public ApiResult getNav(String operatorNo) {
         ApiResult apiResult = new ApiResult();
+        List<String> roleNos = operatorMapper.selectByNo(operatorNo);
+        if(WMSUtil.listIsEmpty(roleNos)){
+            return apiResult;
+        }
         List<NavigationVo> navigationVos = new ArrayList<>();
-        List<PermissionTree> permissionTrees= (List<PermissionTree>) this.permissionService.getPermission(operatorNo).getData();
+        List<PermissionTree> permissionTrees= (List<PermissionTree>) this.permissionService.getPermission(roleNos.get(0)).getData();
         for(PermissionTree permissionTree : permissionTrees){
             NavigationVo navigationVo = new NavigationVo();
             if(WMSConstant.YES.equals(permissionTree.getCheck())){

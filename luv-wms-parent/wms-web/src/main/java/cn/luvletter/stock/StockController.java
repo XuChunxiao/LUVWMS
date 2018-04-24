@@ -20,11 +20,11 @@ import javax.servlet.http.HttpServletRequest;
 public class StockController extends BaseController{
     @Autowired
     private StockService stockService;
-    @GetMapping
+    @GetMapping("/list")
     public ApiResult getData(HttpServletRequest httpServletRequest){
         return stockService.getStock(httpServletRequest);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/list/{id}")
     public ApiResult getData(@PathVariable String id, HttpServletRequest httpServletRequest){
         return stockService.getStockDtl(id,httpServletRequest);
     }

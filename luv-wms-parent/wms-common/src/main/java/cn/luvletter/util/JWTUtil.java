@@ -6,6 +6,7 @@ import cn.luvletter.exception.InvalidTokenException;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.InvalidClaimException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateUtils;
@@ -137,6 +138,8 @@ public class JWTUtil {
            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(secret+ipAddr)).build();
            try{
                jwtVerifier.verify(token);
+           }catch (InvalidClaimException e){
+               throw new InvalidTokenException("token expire!");
            }catch (Exception e){
               e.printStackTrace();
                return false;

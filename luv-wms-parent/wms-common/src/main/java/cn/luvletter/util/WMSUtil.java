@@ -16,6 +16,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Zephyr Ji
@@ -35,28 +36,26 @@ public class WMSUtil {
      * @Date: 9:38 2018/3/28
      */
     public String getCurrWNo(String account){
-        String wNo = (String) redisUtil.hGet(WMSConstant.R_WAREHOUSENO_M, account);
-        if(StringUtils.isEmpty(wNo)){
-            throw new ApplicationException("当前登录用户:"+account+"未绑定仓库");
-        }
-        return wNo;
+//        String wNo = (String) redisUtil.hGet(WMSConstant.R_WAREHOUSENO_M, account);
+//        if(StringUtils.isEmpty(wNo)){
+//            throw new ApplicationException("当前登录用户:"+account+"  未绑定仓库");
+//        }
+        return "1";
     }
     public String getCurrWNo(HttpServletRequest httpServletRequest){
-//        String currUser = this.getCurrUser(httpServletRequest);
-//        return this.getCurrWNo(currUser);
-        return "1";
+        String currUser = this.getCurrUser(httpServletRequest);
+        return this.getCurrWNo(currUser);
     }
     /**
      * @Description: 从token中获取当前登录用户
      * @Date: 9:47 2018/3/28
      */
     public String getCurrUser(HttpServletRequest httpServletRequest){
-//        final String token = JWTUtil.getToken(httpServletRequest);
-//        if(StringUtils.isEmpty(token)) {
-//            throw new ApplicationException("获取当前登录用户失败");
-//        }
-//        return JWTUtil.getUsernameFromToken(token);
-        return "admin";
+        final String token = JWTUtil.getToken(httpServletRequest);
+        if(StringUtils.isEmpty(token)) {
+            throw new ApplicationException("获取当前登录用户失败");
+        }
+        return JWTUtil.getUsernameFromToken(token);
     }
     /**
      * @Description: 获取分页开始
@@ -143,6 +142,9 @@ public class WMSUtil {
             }
         }
         return ipAddress;
+    }
+    public static boolean listIsEmpty(List list){
+        return list == null || list.isEmpty();
     }
 
 }

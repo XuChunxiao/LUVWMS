@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2018/4/20
  */
 @RestController
-@RequestMapping("/operator")
+@RequestMapping("/authority/operator")
 public class OperatorController extends BaseController {
 
     @Autowired

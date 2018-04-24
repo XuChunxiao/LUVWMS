@@ -86,7 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
 
                 .authorizeRequests()
-                .antMatchers("/auth").permitAll()
+                .antMatchers("/auth/**").permitAll()
                 .antMatchers("/common/**").permitAll()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and().formLogin()
@@ -99,6 +99,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().permitAll()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().exceptionHandling().authenticationEntryPoint(ajaxAuthenticationEntryPoint)
+                .accessDeniedHandler(new AjaxAccessDeniedHandler())
                 //关闭csrf
                 .and().csrf().disable();
         //在身份验证前添加token验证

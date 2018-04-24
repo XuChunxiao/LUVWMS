@@ -44,20 +44,20 @@
 
         <!-- 数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/luv_wms"
+                        connectionURL="jdbc:mysql://115.159.52.86:3306/luv_wms"
                         userId="root"
-                        password="123456" />
+                        password="741123" />
 
         <!-- model生成 -->
-        <javaModelGenerator targetPackage="cn.luvletter.base.model" targetProject="luv-wms-parent/wms-api/src/main/java" />
+        <javaModelGenerator targetPackage="cn.luvletter.stock.model" targetProject="luv-wms-parent/wms-api/src/main/java" />
 
         <!-- MapperXML生成 -->
-        <sqlMapGenerator targetPackage="cn.luvletter.base.dao.mapper" targetProject="luv-wms-parent/wms-service/src/main/java" />
+        <sqlMapGenerator targetPackage="cn.luvletter.stock.dao.mapper" targetProject="luv-wms-parent/wms-service/src/main/java" />
 
         <!-- Mapper接口生成 -->
-        <javaClientGenerator targetPackage="cn.luvletter.base.dao" targetProject="luv-wms-parent/wms-service/src/main/java" type="XMLMAPPER" />
+        <javaClientGenerator targetPackage="cn.luvletter.stock.dao" targetProject="luv-wms-parent/wms-service/src/main/java" type="XMLMAPPER" />
 
         <!-- 需要映射的表 -->
-                                    <table tableName="wms_base_goods" domainObjectName="Goods"></table>
+                                    <table tableName="wms_stock_dtl" domainObjectName="StockDtl"></table>
                         </context>
 </generatorConfiguration>

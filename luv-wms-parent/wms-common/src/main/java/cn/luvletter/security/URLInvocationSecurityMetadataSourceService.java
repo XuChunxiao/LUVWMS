@@ -2,6 +2,7 @@ package cn.luvletter.security;
 
 
 
+import cn.luvletter.bean.AuthBean;
 import cn.luvletter.constant.SqlConstant;
 import cn.luvletter.util.JdbcUtil;
 import org.slf4j.Logger;
@@ -31,30 +32,29 @@ public class URLInvocationSecurityMetadataSourceService implements FilterInvocat
 
 
     private void loadResourceDefine() throws SQLException {
-        List<Map<String,Object>> list = JdbcUtil.newInstance().selectByParams(SqlConstant.SELECT_ALL_AUTH, null);
-        urlMap = new HashMap<>();
+        List<AuthBean> authBeans = JdbcUtil.newInstance().selectBean(SqlConstant.SELECT_ALL_AUTH, null, AuthBean.class);
         Collection<ConfigAttribute> array;
         ConfigAttribute cfg;
-        StringBuilder logStr = new StringBuilder();
-        for(Map<String,Object> var : list) {
+        urlMap = new HashMap<>();
+        for(AuthBean authBean : authBeans){
+            String url = authBean.getUrl();
+            if(urlMap.containsKey(url)){
+                cfg = new SecurityConfig(authBean.getName());
+                urlMap.get(url).add(cfg);
+                continue;
+            }
             array = new ArrayList<>();
-            String name = (String)var.get("name");
-            String url = (String)var.get("url");
-            cfg = new SecurityConfig(name);
-            //此处只添加了名字，其实还可以添加更多权限的信息，例如请求方法到ConfigAttribute的集合中去。
-            // 此处添加的信息将会作为MyAccessDecisionManager类的decide的第三个参数。
+            cfg = new SecurityConfig(authBean.getName());
             array.add(cfg);
-            //用权限的getUrl() 作为map的key，用ConfigAttribute的集合作为 value，
-            urlMap.put(url, array);
-            logStr.append("name:").append(name).append("url:").append(url).append("\n");
+            urlMap.put(url,array);
         }
-        log.debug("load Permission Resource Define\n"+logStr.toString());
+        log.debug("load Permission Resource Define\n"+urlMap.toString());
     }
 
 
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
-        if(urlMap ==null) {
+        if(urlMap == null || urlMap.isEmpty()) {
             try {
                 loadResourceDefine();
             } catch (SQLException e) {
@@ -62,7 +62,7 @@ public class URLInvocationSecurityMetadataSourceService implements FilterInvocat
             }
         }
         HttpServletRequest request = ((FilterInvocation) object).getHttpRequest();
-        log.debug("Request '" + request.getMethod() + " " + request.getServletPath()+request.getPathInfo() + "'" + " start match DB url '");
+        log.debug("Request '" + request.getMethod() + " " + request.getServletPath()+request.getPathInfo() + "'" + " start match database url '");
         AntPathRequestMatcher matcher;
         String resUrl;
         for (String s : urlMap.keySet()) {

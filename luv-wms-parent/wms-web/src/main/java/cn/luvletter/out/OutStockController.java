@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2018/3/29
  */
 @RestController
-@RequestMapping("/outStock")
+@RequestMapping("/outStock/list")
 public class OutStockController extends BaseController{
     @Autowired
     private OutStockService outStockService;

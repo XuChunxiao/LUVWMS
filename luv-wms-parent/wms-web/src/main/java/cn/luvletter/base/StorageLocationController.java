@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  * @ Date 2018/3/6
  */
 @RestController
-@RequestMapping("/storageLocation")
+@RequestMapping("/sys/storageLocation")
 public class StorageLocationController extends BaseController{
     @Autowired
     private StorageLocationService storageLocationService;

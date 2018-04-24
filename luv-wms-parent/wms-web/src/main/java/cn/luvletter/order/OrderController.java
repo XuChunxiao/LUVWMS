@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2018/4/3
  */
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/outStock/orders")
 public class OrderController extends BaseController{
 
     @Autowired

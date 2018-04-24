@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  * @Date 2018/4/21
  */
 @RestController
-@RequestMapping("/dictionary")
+@RequestMapping("/sys/dictionary")
 public class DictionaryController extends BaseController {
     @Autowired
     private DictionaryService dictionaryService;

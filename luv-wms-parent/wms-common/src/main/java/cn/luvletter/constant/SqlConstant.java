@@ -8,5 +8,5 @@ package cn.luvletter.constant;
 public class SqlConstant {
     public static final String SELECT_OPRT_BY_NO = "select No account,`password` from sys_operator where NO=? ";
     public static final String SELECT_ALL_AUTH = "select sr.role_name name,sp.permission_url url from sys_permission sp LEFT JOIN sys_role_permission srp on sp.permission_no=srp.permission_no\n" +
-            "LEFT JOIN sys_role sr on srp.role_no=sr.role_no";
+            "LEFT JOIN sys_role sr on srp.role_no=sr.role_no where 1=1 and sp.permission_pid !=0";
 }

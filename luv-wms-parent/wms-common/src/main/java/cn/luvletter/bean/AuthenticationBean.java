@@ -10,8 +10,17 @@ public class AuthenticationBean {
     private String password;
     private String roleNo;
     private String idAddr;
+    private String warehouseNo;
     private boolean checkbox;
 
+
+    public String getWarehouseNo() {
+        return warehouseNo;
+    }
+
+    public void setWarehouseNo(String warehouseNo) {
+        this.warehouseNo = warehouseNo;
+    }
 
     public String getIdAddr() {
         return idAddr;

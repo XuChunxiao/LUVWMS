@@ -1,5 +1,7 @@
 package cn.luvletter.sys.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,6 +18,7 @@ public class Operator implements Serializable {
      *
      * @mbggenerated
      */
+    @NotEmpty(message = "账号不能为空  ")
     private String no;
 
     /**
@@ -30,6 +33,7 @@ public class Operator implements Serializable {
      *
      * @mbggenerated
      */
+    @NotEmpty(message = "名称不能为空  ")
     private String name;
 
     /**
