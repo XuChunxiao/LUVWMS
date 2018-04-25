@@ -129,6 +129,7 @@ public class GoodsServiceImpl implements GoodsService{
 
     public  static Long RID_COUNT = null;
 
+    @Cacheable(value = "luv",keyGenerator = "simpleKeyGenerator")
     @Override
     public synchronized String genDn(String warehouse, String companyNo){
             try {

@@ -1,5 +1,6 @@
 package cn.luvletter.main.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,10 @@ import java.util.Date;
  * @Description: 字典
  * @Date 2018/4/2
  */
-public class Dictionary {
+public class Dictionary implements Serializable {
+
+    private static final long serialVersionUID = -712002438953498525L;
+
     private Long id;
     private String rid;
     private String paraId;

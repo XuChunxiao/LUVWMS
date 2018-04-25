@@ -46,7 +46,7 @@ public class RedisConfig {
         RedisTemplate template = new RedisTemplate();
         RedisSerializer stringSerializer = new StringRedisSerializer();
         template.setConnectionFactory(jedisConnectionFactory);
-        template.setDefaultSerializer(stringSerializer);
+        template.setStringSerializer(stringSerializer);
         return template;
     }
     @Bean

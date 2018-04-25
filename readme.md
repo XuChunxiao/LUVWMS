@@ -11,11 +11,32 @@
 ## 技术栈
 ### 后端
 * Spring+SpringMVC+MyBatis
+* 缓存使用Redis,并使用Spring Cache的缓存注解,可以直接应用到方法上。
+---
+    @Cacheable(value = WMSConstant.REDIS_CACHE_NAME)
+    public ApiResult getComboBox(String pid,String value) {
+        ApiResult apiResult = new ApiResult();
+        List<Dictionary> dictionaries = dictionaryMapper.selectByParaId(pid, value);
+        if(dictionaries == null || dictionaries.isEmpty()){
+            apiResult.isFalse();
+            return apiResult;
+        }
+        apiResult.setData(dictionaries.get(0));
+        return apiResult;
+    }
 ### 前端  
 * 使用阿里巴巴开源的Iceworks构建
-###### （前端代码[在这里](http://example.net/)）
+###### （前端代码[在这里](https://github.com/J2ephyr/LUVWMS_React)）
 ### 权限管理
-* Spring Security+JWT
+* Spring Security+JWT (可以细化到url的权限管理)
+---
+#### 关键代码
+    //在身份验证前添加token验证
+    http.addFilterBefore(jwtAuthenticationTokenFilter,UsernamePasswordAuthenticationFilter.class);
+    //替换身份验证过滤器
+    http.addFilterAt(customAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+    //在权限筛选前添加自定义的url方式筛选
+    http.addFilterBefore(urlFilterSecurityInterceptor,FilterSecurityInterceptor.class);
 ## 系统功能图
 ![系统功能图](http://cdn.luvletter.cn/wms%E5%8A%9F%E8%83%BD%E5%9B%BE1.png)
 ## 部分系统截图
@@ -31,6 +52,7 @@
 1. clone项目到本地
 2. 执行mysql脚本
 3. 数据库配置文件在luv-server中resources的jdbc.properties和wms-common中resources的jdbc.propertieste
+4. 安装Redis,并配置luv-server下resources的redis.properties
 4. 用Intellij IDEA打开项目，Maven加入luv-comm、luv-server、luv-wms-parent,并依次执行mvn clean install
 5. 配置tomcat，就可以运行了。
 

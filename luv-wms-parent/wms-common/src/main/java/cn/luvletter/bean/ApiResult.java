@@ -3,6 +3,7 @@ package cn.luvletter.bean;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -10,7 +11,9 @@ import java.util.List;
  * @ Description: 返回前端实体
  * @ Date 2018/2/9
  */
-public class ApiResult {
+public class ApiResult implements Serializable{
+
+    private static final long serialVersionUID = 1837004257486125428L;
     /**
      * 返回状态，默认成功success，失败false
      */
@@ -74,5 +77,15 @@ public class ApiResult {
 
     public String getStatus() {
         return status;
+    }
+
+    @Override
+    public String toString() {
+        return "ApiResult{" +
+                "status='" + status + '\'' +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                ", total=" + total +
+                '}';
     }
 }
