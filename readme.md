@@ -7,7 +7,7 @@
 ---
 基于SSM的前后端分离的仓储管理系统，前后端交互遵循Restful接口原则。
 
-线上地址 :[wms.luvletter.cn](http://wms.luvletter.cn/)
+线上地址 :[wms.luvletter.cn](http://wms.luvletter.cn/) 账号：admin 密码：1
 ## 技术栈
 ### 后端
 * Spring+SpringMVC+MyBatis
